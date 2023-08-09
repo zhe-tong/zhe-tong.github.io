@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>JDK安装过程及环境配置 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JDK安装过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK安装过程及环境配置">
+<meta property="og:url" content="http://example.com/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JDK安装过程">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk1.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk2.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk3.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk4.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk5.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk6.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk7.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk8.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk9.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk10.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk11.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk12.png">
+<meta property="article:published_time" content="2020-05-22T11:04:03.000Z">
+<meta property="article:modified_time" content="2020-05-22T13:51:36.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-JDK安装过程及环境配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2020-05-22T11:04:03.000Z" itemprop="datePublished">2020-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      JDK安装过程及环境配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="JDK安装过程"><a href="#JDK安装过程" class="headerlink" title="JDK安装过程"></a>JDK安装过程</h1><span id="more"></span>
+<p>首先进入<a target="_blank" rel="noopener" href="https://www.oracle.com/index.html">甲骨文官网</a> </p>
+<p>接着打开菜单，选择downloads<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk1.png" alt="如图"> </p>
+<p>下滑找到JDK<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk2.png" alt="如图"> </p>
+<p>因为考虑到有些初学者（比如我）会跟着老师选择一些老的版本，所以找到最下方的Java Archive进行历史版本的下载<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk3.png" alt="如图"> </p>
+<p>这里就可以进行对版本的选择了，我选择的是jdk9<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk4.png" alt="如图"><br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk5.png" alt="如图"> </p>
+<p>出现这个弹窗后勾选接受就可以开始下载了<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk6.png" alt="如图"> </p>
+<p>下载结束后开始jdk的安装<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk7.png" alt="如图"> </p>
+<p>选择安装路径，注意不要带有中文以及空格。这里我并没有安装公共jre，因为jdk本身的开发工具里就已经包括了jre了，所以我们没有必要再去安装一个jre<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk8.png" alt="如图"> </p>
+<p>最后就下一步下一步，等待安装完毕后关闭对话框就好了。</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>首先我们右键“此电脑”在下拉列表中选择“属性”</p>
+<p>接着点开左侧的“高级系统设置”，选中“环境变量”<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk9.png" alt="如图"><br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk10.png" alt="如图"></p>
+<p>这里我们做两处改动</p>
+<ul>
+<li><p>首先在下方系统变量的框中新建一个变量</p>
+<blockquote>
+<p>JAVA_HOME </p>
+</blockquote>
+<p>  并在后方给出jdk的安装路径（注意大写）<br>  <img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk11.png" alt="如图"></p>
+</li>
+<li><p>接着我们将“PATH”变量进行更改，在最上方添加字段</p>
+<blockquote>
+<p>%JAVA_HOME%\bin</p>
+</blockquote>
+<p>  <img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk12.png" alt="如图"><br>  然后点确定退出，完成环境的配置。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" data-id="cll3dmmge00012h5h7hficgsi" data-title="JDK安装过程及环境配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/23/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据类型转换
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E3%80%81%E5%B8%B8%E9%87%8F%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关键字、标识符、常量、数据类型和变量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">编程原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据库原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">离散数学学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/">Basic Linux Commands 及 9311数据库lab的环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">关键字private的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>离散数学学习记录 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="离散数学lesson1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学学习记录">
+<meta property="og:url" content="http://example.com/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="离散数学lesson1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-16T09:20:51.000Z">
+<meta property="article:modified_time" content="2021-03-04T16:42:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-离散数学学习记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2021-02-16T09:20:51.000Z" itemprop="datePublished">2021-02-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      离散数学学习记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="离散数学lesson1"><a href="#离散数学lesson1" class="headerlink" title="离散数学lesson1"></a>离散数学lesson1</h1><span id="more"></span>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><ul>
+<li>set：集合</li>
+<li>subset：子集</li>
+<li>element：元素</li>
+<li>Natural numbers：自然数，用N表示集合 N &#x3D; {0, 1, 2, . . .}</li>
+<li>Positive integers：正整数，用P表示集合 P &#x3D; {1, 2, . . .}</li>
+<li>Intergers：整数，用Z表示集合 Z &#x3D; {. . . , −n, −(n − 1), . . . , −1, 0, 1, 2, . . .}</li>
+<li>Rational numbers (fractions)： 有理数（分数）用Q表示集合</li>
+<li>Reals：实数，用R表示集合</li>
+</ul>
+<h2 id="取整："><a href="#取整：" class="headerlink" title="取整："></a>取整：</h2><ul>
+<li>floor of x, the greatest integer ≤ x，下封的方括号，取小于x最大整数</li>
+<li>ceiling of x, the least integer ≥ x，上封的方括号，取大于x最小整数</li>
+</ul>
+<h2 id="除法："><a href="#除法：" class="headerlink" title="除法："></a>除法：</h2><ul>
+<li>m | n，n除以m</li>
+<li>r &#x3D; n mod m， r是n除以m的余数（remainder）</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>prime：质数，指只被1和本身整除的大于1的数</li>
+<li>Greatest common divisor：最大公约数，gmd(m,n)</li>
+<li>relatively prime：相对质数，gmd(m,n)&#x3D;1时为relatively prime<ul>
+<li>两个相等数不能为相对质数，因为他们的最大公约数为本身而非1</li>
+</ul>
+</li>
+<li>Least common multiple：最小公倍数，lcm(m,n)<ul>
+<li>要使两个正整数的最小公倍数时他们之积，他们必须为相对质数</li>
+</ul>
+</li>
+<li>gcd(m, n) · lcm(m, n) &#x3D; |m| · |n|</li>
+</ul>
+<h2 id="欧几里得算法（辗转相除法）"><a href="#欧几里得算法（辗转相除法）" class="headerlink" title="欧几里得算法（辗转相除法）"></a>欧几里得算法（辗转相除法）</h2><pre><code>             m if m = n
+f (m, n) =   f (m − n, n) if m &gt; n
+             f (m, n − m) if m &lt; n
+
+例：求（319，377）：
+
+∵ 319÷377=0(余319)
+∴(319，377)=(377，319)；
+∵ 377÷319=1(余58)
+∴(377，319)=(319，58)；
+∵ 319÷58=5（余29）
+∴ (319，58)=(58，29)；
+∵ 58÷29=2(余0)
+∴ (58，29)= 29；
+∴ gmd(319，377)=29。
+</code></pre>
+<hr>
+<hr>
+<h1 id="离散数学lesson2"><a href="#离散数学lesson2" class="headerlink" title="离散数学lesson2"></a>离散数学lesson2</h1><h2 id="集合内一些元素的定义"><a href="#集合内一些元素的定义" class="headerlink" title="集合内一些元素的定义"></a>集合内一些元素的定义</h2><ul>
+<li><p>幂集(Power Set)：由该集合全部子集为元素构成的集合。<br>  Pow(X) &#x3D; { A : A ⊆ X }<br>  Always： |Pow(X)| &#x3D; 2^|X|</p>
+</li>
+<li><p>基数(cardinalities)：一个集合的元素个数</p>
+</li>
+<li><p>区间(Interval)</p>
+</li>
+<li><p>并集(union)：A ∪ B，其元素为 A or B</p>
+</li>
+<li><p>交集(intersection)：A ∩ B, 其元素为 A and B</p>
+<pre><code>  如果 A ∩ B=∅ 则AB不相交(disjoint)
+  A ∪ B = B ⇔ A ⊆ B
+  A ∩ B = B ⇔ A ⊇ B
+</code></pre>
+</li>
+<li><p>差值(difference)：A \ B， 也就是</p>
+<pre><code>  A = &#123;1,2,3&#125;, B = &#123;3,4&#125;, A\B = &#123;1,2&#125; 
+</code></pre>
+</li>
+<li><p>对称差(symmetric difference)：</p>
+<p>  只属于其中一个集合，而不属于另一个集合的元素组成的集合<br>  A ⊕ B &#x3D; (A \ B) ∪ (B \ A)</p>
+</li>
+<li><p>补集(complement)：给定全集U，则A在U中的相对补集称为A的绝对补集（简称补集），记为A^c</p>
+</li>
+</ul>
+<h2 id="集合运算法则"><a href="#集合运算法则" class="headerlink" title="集合运算法则"></a>集合运算法则</h2><p>虽然有点小儿科还是记下来当玩了：</p>
+<ol>
+<li><p>交换率(Commutativity)</p>
+<pre><code> A ∪ B = B ∪ A
+ A ∩ B = B ∩ A
+</code></pre>
+</li>
+<li><p>结合律(Associativity)</p>
+<pre><code> (A ∪ B) ∪ C = A ∪ (B ∪ C)
+ (A ∩ B) ∩ C = A ∩ (B ∩ C)
+</code></pre>
+</li>
+<li><p>分配律(Distribution)</p>
+<pre><code> A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+ A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
+</code></pre>
+</li>
+<li><p>幂等(Idempotence)</p>
+<pre><code> A ∪ A = A
+ A ∩ A = A
+</code></pre>
+</li>
+<li><p>Identity</p>
+<pre><code> A ∪ ∅ = A
+ A ∩ ∅ = ∅
+</code></pre>
+</li>
+<li><p>双重否定率(Double Complementation)</p>
+<pre><code> (A^c)^c = A
+</code></pre>
+</li>
+<li><p>德摩根定律(De Morgan laws)</p>
+<pre><code> (A ∪ B)^c = A^c ∩ B^c
+ (A ∩ B)^c = A^c ∪ B^c
+</code></pre>
+</li>
+</ol>
+<h2 id="形式语言内一些元素的定义"><a href="#形式语言内一些元素的定义" class="headerlink" title="形式语言内一些元素的定义"></a>形式语言内一些元素的定义</h2><ul>
+<li><p>Σ(Sigma),求和符号</p>
+</li>
+<li><p>笛卡儿积(Cartesian product)：</p>
+<p>  如果集合X是13个元素的点数集合{A,K,Q,J,10,9,8,7,6,5,4,3,2}，而集合Y是4个元素的花色集合{♠, ♥, ♦, ♣}，则这两个集合的笛卡儿积是有52个元素的标准扑克牌的集合{(A,♠),(K,♠),…,(2,♠),…,(A,♣),…,(3,♣),(2,♣)}。</p>
+</li>
+<li><p>笛卡尔积功能：分配元素</p>
+</li>
+<li><p>Σ(Sigma)：字母表(alphabet)</p>
+</li>
+<li><p>w(word)：字符串： any finite string of symbols from Σ<br>  length(ω)：字符串长度</p>
+</li>
+<li><p>λ(lambda)：空字符串(empty word)，空字符串长度为0，即length(λ) &#x3D; 0</p>
+</li>
+<li><p>Σ^k：所有长度为k的字符串组成的集合</p>
+<pre><code>  特例：Σ^0 = &#123;λ&#125;, Σ^1 = Σ
+  Σ^∗ ：全集，set of all words (of all lengths)
+  Σ^+ ：非空正集，set of all nonempty words (of any positive length)
+</code></pre>
+</li>
+</ul>
+<h2 id="命题逻辑Propositional-Logic"><a href="#命题逻辑Propositional-Logic" class="headerlink" title="命题逻辑Propositional Logic"></a>命题逻辑Propositional Logic</h2><ul>
+<li>symbol and text<ul>
+<li>∧ means “and”, “but”, “;”, “:”</li>
+<li>∨ means “or”, “either . . . or . . . ”</li>
+<li>¬ means “not”, “it is not the case that”</li>
+<li>⇒ means “must”</li>
+<li>A unless B 表示为 ¬B ⇒ A</li>
+<li>A if, and only if, B 表示为 A ⇔ B</li>
+</ul>
+</li>
+</ul>
+<h2 id="命题逻辑的公式集：Σ-Prop-∪-⊤-⊥-¬-∧-∨-⇒-⇔"><a href="#命题逻辑的公式集：Σ-Prop-∪-⊤-⊥-¬-∧-∨-⇒-⇔" class="headerlink" title="命题逻辑的公式集：Σ &#x3D; Prop ∪ {⊤, ⊥, ¬, ∧, ∨, ⇒, ⇔, (, )}"></a>命题逻辑的公式集：Σ &#x3D; Prop ∪ {⊤, ⊥, ¬, ∧, ∨, ⇒, ⇔, (, )}</h2><ol>
+<li>⊤, ⊥和 Prop 的所有元素都是公式</li>
+<li>如果φ是一个公式，那么¬φ也是一个公式。如果φ和ψ是公式，那么(φ∧ψ)、(φ∨ψ)、(φ ⇒ψ)和(φ ⇔ψ)也是公式</li>
+<li>在2中，如果没有歧义的话括号常常省略。而¬比∧和∨优先级要高，∧和∨又比⇒和⇔优先级要高</li>
+</ol>
+<h2 id="真值表："><a href="#真值表：" class="headerlink" title="真值表："></a>真值表：</h2><pre><code>    A       B       A ∧ B	   	
+    F       F       F	        		
+    F       T       F		    		
+    T       F       F		    
+    T       T       T		    
+
+
+    A       B       A ∨ B
+    F       F       F
+    F       T       T
+    T       F       T
+    T       T       T
+
+
+    A       ¬ A
+    F       T
+    T       F
+
+    A and not B，A ⇒ B 
+    A       B       A⇒B 
+    F       F       T 
+    F       T       T 
+    T       F       F 
+    T       T       T 
+
+    A if, and only if, B，  A ⇔ B 
+    A       B       A⇔B 
+    F       F       T 
+    F       T       F 
+    T       F       F 
+    T       T       T
+</code></pre>
+<hr>
+<hr>
+<h1 id="离散数学Lesson3"><a href="#离散数学Lesson3" class="headerlink" title="离散数学Lesson3"></a>离散数学Lesson3</h1><ol>
+<li>两个公式 φ, ψ 在逻辑上相等，表示为 φ ≡ ψ。一般逻辑等效项：</li>
+</ol>
+<ul>
+<li><p>身份法(identity)：</p>
+<pre><code>  p ∨ ⊥ ≡ p，
+  p ∧ ⊤ &gt; ≡ p，
+  p ∨ ⊤ ≡ ⊤，
+  p ∧ ⊥ ≡ ⊥
+</code></pre>
+</li>
+<li><p>否定法：</p>
+<pre><code>  p ∨ ¬p ≡ ⊤，
+  p ∧ ¬p ≡ ⊥
+</code></pre>
+</li>
+<li><p>等幂法(Idempotence)：</p>
+<pre><code>  p ∨ p ≡ p，
+  p ∧ p ≡ p
+</code></pre>
+</li>
+<li><p>双重否定(Double Negation)：</p>
+<pre><code>  ¬¬p ≡ p
+</code></pre>
+</li>
+<li><p>交换律：</p>
+<pre><code>  p ∨ q ≡ q ∨ p， 
+  p ∧ q ≡ q ∧ p
+</code></pre>
+</li>
+<li><p>结合律：</p>
+<pre><code>  (p ∨ q) ∨ r ≡ p ∨ (q ∨ r) ，
+  (p ∧ q) ∧ r ≡ p ∧ (q ∧ r)
+</code></pre>
+</li>
+<li><p>分配律：</p>
+<pre><code>  p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)， 
+  p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)
+</code></pre>
+</li>
+<li><p>德摩根定律：</p>
+<pre><code>  ¬(p ∧ q) ≡ ¬p ∨ ¬q， 
+  ¬(p ∨ q) ≡ ¬p ∧ ¬q
+</code></pre>
+</li>
+<li><p>implication：</p>
+<pre><code>  p ⇒ q ≡ ¬p ∨ q， 
+  p ⇔ q ≡ (p ⇒ q) ∧ (q ⇒ p)
+</code></pre>
+</li>
+</ul>
+<ol start="2">
+<li><p>在讨论前提和结论中，只要我们相信前提就要相信结论。结论是前提的逻辑结果，前提导致结论</p>
+</li>
+<li><p>在真值表中，若一列每一个结论均为真，则该结论有效</p>
+<pre><code> φ1, . . . , φn |= φ
+</code></pre>
+</li>
+<li><p>如果一个公式φ对其基本命题的所有真值赋值都为真，那么这个公式就是有效的，或者说是一个同义词，表示为|&#x3D;φ。</p>
+<ul>
+<li><p>真值表：</p>
+<pre><code>      A       B       (A ⇒ B) ⇒ (¬B ⇒ ¬A)
+      F       F       T 
+      F       T       T 
+      T       F       T 
+      T       T       T
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>哥德巴赫猜想<br> ∀n∈2N (n &gt; 2 ⇒ ∃p, q∈N (p, q∈Primes ∧ n &#x3D; p + q))<br> ∀表示 “对于所有”，∃表示 “存在”<br> (这一部分并未弄清，记得回顾)</p>
+</li>
+</ol>
+<hr>
+<hr>
+<h1 id="离散数学Lesson4"><a href="#离散数学Lesson4" class="headerlink" title="离散数学Lesson4"></a>离散数学Lesson4</h1><ol>
+<li>命题公式分类：<ul>
+<li>重言式（永真式，tautology）：命题变元的所有赋值都是命题公式的成真赋值。</li>
+<li>矛盾式（永假式、不可满足式，contradiction）：命题变元的所有赋值都是命题公式的成假赋值。</li>
+<li>可满足式（contingency）：命题公式至少有一个成真赋值。</li>
+</ul>
+</li>
+<li>逻辑等价式（logical equivalent）<ul>
+<li>当命题公式 A  B 是重言式时，则称A逻辑等价于B，记作 A⊨∣ B ，称作逻辑等价式。</li>
+<li>A⊨∣ B可以理解为公式A和公式B等值，即在任何赋值状况下它们的真值是相等的。</li>
+</ul>
+</li>
+<li>逻辑蕴含式(logical implication)：<ul>
+<li>当命题公式 A → B是重言式时，则称A逻辑蕴涵B，记作 A ⊨ B，称作逻辑蕴涵式</li>
+<li>A⊨B 可以理解为A的所有成真赋值都是B的成真赋值。或者说，当A为真时，B一定为真。从推理的角度可以说，A是B成立的前提。</li>
+<li>逻辑蕴涵经常会被推广为Γ ⊨ B的形式，其中Γ是一系列公式，表示B是Γ的逻辑结果。当 Γ中仅包含一个公式A时，就是A ⊨ B；如果中不包含任何公式，记作⊨ B，表示“B永真”。</li>
+</ul>
+</li>
+</ol>
+<h2 id="以上为课外扩展知识，以下为课程记录："><a href="#以上为课外扩展知识，以下为课程记录：" class="headerlink" title="以上为课外扩展知识，以下为课程记录："></a>以上为课外扩展知识，以下为课程记录：</h2><ol>
+<li><p>反证法(Proof of the contrapositive)</p>
+<pre><code> 想要证明：A ⇒ B
+
+ 证明过程：¬B ⇒ ¬A，(A ⇒ B) ≡ (¬B ⇒ ¬A).
+</code></pre>
+</li>
+<li><p>矛盾法(Proof by contradiction)</p>
+<pre><code> 想要证明：A
+ 证明过程：假设¬A，得到对于B的一些命题的B and ¬B 
+ 如，证明√ 2是无理数
+ 证：假设√ 2=p/q 是有理数⇒ 2 = p^2/q^2 （p、q为互质的正整数）
+     ⇒ p^2 = 2q^2 ⇒ p 是偶数(even number)
+     ⇒ p = 2r ⇒ 4r^2 = 2q^2 ⇒ 2r^2 = q^2 ⇒ q是偶数
+     ⇒ p 和 q都为偶数故无法互质 ⇒ 假设不成立
+     ⇒ √ 2是无理数
+</code></pre>
+</li>
+<li><p>代入原理(Substitution)：</p>
+<ul>
+<li>将重言式A中的某个命题变元p的所有出现都代换为命题公式B，得到的命题公式记作 A ( B &#x2F; p ) , A ( B &#x2F; p ) 也是重言式。</li>
+<li>例1：(A ∧ B) ⇒ A，将P ∧ Q 替换给A<blockquote>
+<p>((P ∧ Q) ∧ B) ⇒ (P ∧ Q)</p>
+</blockquote>
+</li>
+<li>例2: ⊨P ⇒ (P ∨ Q), 所以<blockquote>
+<p>⊨(A ∨ B) ⇒ ((A ∨ B) ∨ Q)</p>
+</blockquote>
+</li>
+<li>例3: P ⇒ Q ≡ ¬P ∨ Q, 所以<blockquote>
+<p>Q ⇒ (P ⇒ Q) ≡ Q ⇒ (¬P ∨ Q)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>布尔运算(Boolean Arithmetic)</p>
+<ul>
+<li><p>B &#x3D; {0, 1}  有布尔运算</p>
+<blockquote>
+<p>a · b,  a + b,  a’  &#x3D; 1 − a</p>
+</blockquote>
+</li>
+<li><p>布尔运算法则</p>
+<pre><code>      交换律：
+  x + y = y + x
+  x · y = y · x 
+
+      结合律：
+  (x + y) + z = x + (y + z) 
+  (x · y) · z = x · (y · z) 
+
+      分配律：
+  x + (y · z) = (x + y) · (x + z) 
+  x · (y + z) = (x · y) + (x · z) 
+
+      幂等率：
+  x + 0 = x 
+  x · 1 = x 
+
+      互补率：
+  x + x’ = 1
+  x · x’ = 0
+</code></pre>
+</li>
+<li><p>二位向量运算法则：</p>
+<pre><code>      0 def = (0, 0) 
+      1 def = (1, 1) 
+
+      join: 
+      (a1, a2) + (b1, b2) 7→ (a1 + b1, a2 + b2) 
+
+      meet: 
+      (a1, a2) · (b1, b2) 7→ (a1 · b1, a2 · b2) 
+
+      互补(complementation): 
+      (a1, a2) 0 7→ (a1’, a2’ )
+</code></pre>
+</li>
+<li><p>转换布尔表示形式：</p>
+<pre><code>      p, q, . . . 	p, q, . . . 
+
+      p ∧ q 		p · q or pq 
+
+      p ∨ q	 	p + q 
+
+      ¬p 		p’
+</code></pre>
+</li>
+<li><p>合取范式CNF (conjunctive normal form) </p>
+<ul>
+<li>形如A1∧A2∧…∧An的公式称为合取范式CNF（其中Ai为析取式）A1·A2·…·An</li>
+</ul>
+</li>
+<li><p>析取范式DNF (disjunctive normal form) </p>
+<ul>
+<li>形如A1∨A2∨…∨An的公式称为析取范式DNF（其中Ai为合取式）A1+A2+…+An</li>
+</ul>
+</li>
+<li><p>范式转化</p>
+<pre><code>      x + x = x, xx = x 
+      xx’ = 0, x + x’= 1 
+      x · 0 = 0, x · 1 = x, x + 0 = x, x + 1 = 1
+  
+      表达式的首选形式是DNF，尽可能少地使用术语，尽可能的简化。在推导出这样的最小简化时，有两个基本规则
+          1. x + xy = x (absorption)
+          2. xy + xy’= x (combining the opposites)
+</code></pre>
+</li>
+<li><p>转换步骤(以CNF为例)：</p>
+<ol>
+<li><p>消除否定</p>
+<pre><code>         (x + y) ’ = x’ · y’ 
+
+         (x · y)’ = x’ + y’ 
+
+         (x’)’ = x
+</code></pre>
+</li>
+<li><p>使用分配率(打开括号)</p>
+<pre><code>         x + (y1 · . . . · yn) = (x + y1) · . . . · (x + yn) 
+
+         (y1 · . . . · yn) + x = (y1 + x) · . . . · (yn + x)
+</code></pre>
+</li>
+<li><p>例：</p>
+<pre><code>         化简下式：
+     ¬(¬p ∧ ((r ∧ s) ⇒ q))
+     因为：A ⇒ B ≡ ¬A ∨ B
+     所以：¬(¬p ∧ (¬(r ∧ s) ∨ q))
+     step1: (p’((rs)’ + q)’ = (p’)’ + ((rs)’ + q)’ = p + rsq’
+     step2: p + rsq’ = (p + r)(p + sq’) = (p + r)(p + s)(p + q’)
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>卡诺图：<br>  由于我的博客上传图片还不熟练，故我在这里引用一个我觉得还蛮详细的文章来帮助理解如何使用卡诺图<br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/SHENGLI_509/article/details/72514051">https://blog.csdn.net/SHENGLI_509/article/details/72514051</a></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>————————————————<br>部分文章引用自：CSDN博主「Correr Z」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44471681/article/details/102785066">https://blog.csdn.net/weixin_44471681/article/details/102785066</a></p>
+<hr>
+<hr>
+<p>接lesson4:</p>
+<ol>
+<li>计算机中的布尔算法<ul>
+<li>0和1的n-tuple，进行布尔运算<ol>
+<li>加法(join): (1, 0, 0, 1) + (1, 1, 0, 0) &#x3D; (1, 1, 0, 1)</li>
+<li>乘法(meet): (1, 0, 0, 1) · (1, 1, 0, 0) &#x3D; (1, 0, 0, 0)</li>
+<li>取反(complementation): (1, 0, 0, 1)’ &#x3D; (0, 1, 1, 0)</li>
+</ol>
+</li>
+<li>Pow(S)—S的子集<ol>
+<li>加法(join): A ∪ B</li>
+<li>乘法(meet): A ∩ B</li>
+<li>取反(complementation): A^c &#x3D; S \ A</li>
+</ol>
+</li>
+<li>对于任何S集合到B的函数，他们的集合表示为Map(S, B)（没懂）<ol>
+<li>如果f, g : S → B，那么<ul>
+<li>(f+g)：S →B的定义是：s → f (s) + g(s)</li>
+<li>(f · g) : S → B 的定义是： s → f (s) · g(s)</li>
+<li>f ’ : S -→ B 的定义是 s → (f (s))’<br> （这里｜S｜&#x3D; n有2^n个这样的函数）</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>所有n变量的布尔函数<br>  (p1, p2, p3) → (p1 + p2’) · (p1 + p3) · p2 + p3’<br>  这里有2^2^n个，其集合表示为BOOL(n)</li>
+<li>每一个具有有限元素集T的布尔代数都满足<br>  |T| &#x3D; 2^k for some k.</li>
+<li>布尔代数B1，覆盖在具有不同元素0S , 1S的集合S上。布尔代数B2，覆盖在具有不同元素0T , 1T的集合T上。它们是同构的，如果且仅当有一个一对一对应关系 ι : S → T则：<ol>
+<li>ι(0S ) &#x3D; 0T </li>
+<li>ι(1S ) &#x3D; 1T </li>
+<li>ι(s1 + s2) &#x3D; ι(s1) + ι(s2) for all s1,s2 ∈ S </li>
+<li>ι(s1 · s2) &#x3D; ι(s1) · ι(s2) for all s1,s2 ∈ S </li>
+<li>ι(s 0 ) &#x3D; ι(s) 0 for all s ∈ S<br>  （简单来说，同构的B1B2间存在一个固定的关系使得上式成立）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Lesson5-函数和关系"><a href="#Lesson5-函数和关系" class="headerlink" title="Lesson5 函数和关系"></a>Lesson5 函数和关系</h1><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li>函数：函数可以作为一个集合理论的概念来处理，它是一种两个集合之间特殊的对应关系<ol>
+<li>f : S →T描述集合的配对：存在对应关系使S中每个元素s在T中有且仅有唯一元素t与之对应</li>
+<li>S：定义域(domain)，符号：Dom(f )</li>
+<li>T ：陪域&#x2F;达域(codomain)，符号：Codom(f)</li>
+<li>{ f (x) : x ∈ Dom(f ) }：f是原象，f(x)是象(image) , 符号：Im(f )<br> Im(f ) ⊆ Codom(f )</li>
+<li>T中所有象(image)元素组成的集合为映射的值域，记作ran f</li>
+</ol>
+</li>
+<li>复合函数(Composition of Functions)：<ul>
+<li>指指逐个把一个函数作用于另一个函数的结果，所得到的第三个函数</li>
+<li>如，函数 f : X → Y 和 g : Y → Z 可以复合，得到从 X 中的 x 映射到 Z 中 g(f(x)) 的函数</li>
+<li>复合函数记为g ∘ f，前者是后者的子集</li>
+<li>后面都听不懂了</li>
+</ul>
+</li>
+<li>函数属性(Properties of Functions)：<ul>
+<li>满射(onto&#x2F;surjective),：如果陪域的每一个元素都被定义域中的至少一个x所映射，则函数被称为满射。或者说，陪域的每一个值都在定义域中有对应的	</li>
+<li>单射(injective&#x2F;1-1 Functions)：定义域中每个元素在陪域中都有不同的对应的元素（陪域中可能有不和定义域对应的元素，所以单射不一定满射）</li>
+<li>双射(bijective)：即是单射又是满射，定义域中每个元素都与陪域中不同的元素一一对应</li>
+</ul>
+</li>
+<li>反函数(Inverse Functions)有点没懂，只知道大概是从S→T到T→S</li>
+</ol>
+<hr>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-id="cll3dmmgr000e2h5hcsde7349" data-title="离散数学学习记录" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据库原理学习记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Basic Linux Commands 及 9311数据库lab的环境搭建</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">编程原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据库原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">离散数学学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/">Basic Linux Commands 及 9311数据库lab的环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">关键字private的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

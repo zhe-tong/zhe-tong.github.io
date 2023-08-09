@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数据库原理学习记录 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="lesson1 ER模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库原理学习记录">
+<meta property="og:url" content="http://example.com/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="lesson1 ER模型">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-16T15:07:49.000Z">
+<meta property="article:modified_time" content="2021-03-03T14:41:08.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数据库原理学习记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2021-02-16T15:07:49.000Z" itemprop="datePublished">2021-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数据库原理学习记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="lesson1-ER模型"><a href="#lesson1-ER模型" class="headerlink" title="lesson1 ER模型"></a>lesson1 ER模型</h1><span id="more"></span> 
+
+<h2 id="数据库设计原则"><a href="#数据库设计原则" class="headerlink" title="数据库设计原则"></a>数据库设计原则</h2><ul>
+<li>真实性：反映现实(Faithfulness: reflect reality)</li>
+<li>避免冗余(Avoid redundancy)</li>
+<li>挑选合适的元素(Picking the right kind of element)</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>实体(entities)，描述真实的事物</li>
+<li>属性(attribute)，描述实体的属性</li>
+<li>键(key)，一个实体类型通常有一个键：即一组能唯一识别一个实体的属性<br>  可能有一个以上的键，且不可能有两个实体的键相同</li>
+<li>recursive relationship(递归关系)：是对自身的引用，在多媒体数据库中表现为记录与记录之间直接或间接的调用</li>
+</ul>
+<h2 id="ER中实体分为复合实体和弱实体"><a href="#ER中实体分为复合实体和弱实体" class="headerlink" title="ER中实体分为复合实体和弱实体"></a>ER中实体分为复合实体和弱实体</h2><ul>
+<li>弱实体(weak entity type)：一个实体必须依赖于另一个实体存在，那么前者为弱实体，后者为强实体。如 学生-拥有-成绩单 这个关系中，成绩单依赖于学生存在，所以学生为强实体，而成绩单为弱实体。<br>弱实体与强实体关系为N:1或1：1。在ER图中，弱实体为双线矩形，而弱实体连接的关系应为双线菱形。</li>
+</ul>
+<h2 id="ER图中关联关系有三种："><a href="#ER图中关联关系有三种：" class="headerlink" title="ER图中关联关系有三种："></a>ER图中关联关系有三种：</h2><ul>
+<li>1对1（1:1） </li>
+<li>1对多（1:N） </li>
+<li>多对多（M:N）</li>
+</ul>
+<h2 id="ER图中，实体在关系中的参与分两种，"><a href="#ER图中，实体在关系中的参与分两种，" class="headerlink" title="ER图中，实体在关系中的参与分两种，"></a>ER图中，实体在关系中的参与分两种，</h2><ul>
+<li>全部参与(total)</li>
+<li>部分参与(partial)<ul>
+<li>当实体在关系中全部参与时要用双线连接实体和关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="属性的分类："><a href="#属性的分类：" class="headerlink" title="属性的分类："></a>属性的分类：</h2><ul>
+<li>复合属性(composite attribute)：指属性下又可分为其他几种属性，如姓名属性下又分为姓与名</li>
+<li>多值属性(multivalued attribute)：指同属性可以有多种取值，如书籍的分类属性可分为历史、文学等，在ER图中用双线椭圆表示<ul>
+<li>在描述模式(schemata)的时候用()来描述复合属性的，用{}来描述来描述多值属性的</li>
+</ul>
+</li>
+<li>派生属性(derived attribute)：非永久保存于数据库的属性，是从其他属性值或数据中派生出来的，如在实例 兴趣 中，小组名字，小组ID为其属性，而小组人数是在数据库中计算得来且会不断变化，即为派生属性。在ER图中派生属性表现为虚线椭圆。</li>
+</ul>
+<h2 id="overlapping与disjoint"><a href="#overlapping与disjoint" class="headerlink" title="overlapping与disjoint"></a>overlapping与disjoint</h2><ul>
+<li>重叠约束(overlapping)，例，子类客户和子类员工，一个人可以既是客户也是员工，故这两个子类重叠</li>
+<li>不相交约束(disjoint)，例，银行的账户下的子类储值账户和信用账户，是不相重叠的，故这两个子类不相交</li>
+</ul>
+<hr>
+<hr>
+<h1 id="lesson2-关系数据模型"><a href="#lesson2-关系数据模型" class="headerlink" title="lesson2 关系数据模型"></a>lesson2 关系数据模型</h1><blockquote>
+<p>Composite and multivalued attributes are disallowed in relation model.</p>
+</blockquote>
+<blockquote>
+<p>在关系模型中不允许复合和多值属性。</p>
+</blockquote>
+<h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><ol>
+<li>关系(Relation)：一个关系对应着一个二维表，二维表就是关系名。</li>
+<li>元组(Tuple)：在二维表中的一行，称为一个元组。</li>
+<li>属性(Attribute)：在二维表中的列，称为属性。属性的个数称为关系的元或度。列的值称为属性值；</li>
+<li>(值)域(Domain)：属性值的取值范围为值域。</li>
+<li>键(key)：如果在一个关系中存在唯一标识一个实体的一个属性或属性集称为实体的键。</li>
+<li>候选键(candidate key)：若关系中的某一属性的值能唯一标识一个元组,则称为该关系的候选键。</li>
+<li>主键(primary key)：当一个关系模式有多个候选键时，通常选择一个单一属性或少量属性的主键比较好。</li>
+</ol>
+<h2 id="关系的完整性约束条件"><a href="#关系的完整性约束条件" class="headerlink" title="关系的完整性约束条件"></a>关系的完整性约束条件</h2><p>完整性约束用于确定关系数据库里数据的准确性和一致性。</p>
+<ul>
+<li>键约束(Key constraint)：每个关系实例的候选键值必须是唯一的。</li>
+<li>实体完整性(Entity integrity)：实体完整性强制表的标识符列或主键的完整性，属于主键的属性不能为NULL。</li>
+<li>引用完整性(Referential integrity)：引用完整性基于外键与主键之间或外键与唯一键之间的关系。</li>
+<li>检查约束(Checking constraints on updates)</li>
+</ul>
+<hr>
+<h1 id="Lesson3"><a href="#Lesson3" class="headerlink" title="Lesson3"></a>Lesson3</h1><h2 id="ER到关系数据库-RDB-的映射，包含七个步骤"><a href="#ER到关系数据库-RDB-的映射，包含七个步骤" class="headerlink" title="ER到关系数据库(RDB)的映射，包含七个步骤"></a>ER到关系数据库(RDB)的映射，包含七个步骤</h2><ol>
+<li>为所有常规（非弱）实体E找出简单属性并建立关系R<ul>
+<li>属性(attributes)：所有其简单属性</li>
+<li>键(key)：因属性中可能不止一个键(key)故选择一个键作为主键(primary key)<br>  如 Employee - SSN，Fname，Lname，Birdate。并将其列为表格</li>
+</ul>
+</li>
+<li>找到属于实体E的弱实体类型W，并为其建立关系R<ul>
+<li><p>属性(attributes)：弱实体也包含其所有简单属性，			</p>
+</li>
+<li><p>键(key)：弱实体的键由外键(一个公共关系中另一个实体的主键)和他的一个键共同组成</p>
+<p>  如Employee的弱实体Dependent - SSN， Fname， Birdate， Relation。</p>
+</li>
+</ul>
+</li>
+<li>找到1对1的关系类型B，有两种方式来映射他们的关系<ol>
+<li><p>为这个关系单独创建一个表，并复制其各自主键继承至这个表中</p>
+<p> 如在Employee - Department的关系中，复制Employee主键SSN和Department主键Name中关系表中来映射其关系，Mdate作为该关系的简单属性也表现在该表中</p>
+</li>
+<li><p>复制其中一个实体的主键至另一个实体的表格中作为外键</p>
+<p> 如复制Department主键Name至表Employee中来实现对其1对1关系的映射</p>
+<p> 反之亦然</p>
+</li>
+</ol>
+</li>
+<li>对于常规的关系1对n类型B<ul>
+<li>复制关系对应为1的实体的主键至另一实体作为外键(若是反过来复制n对应关系的实体主键会导致信息过多，故这并不是一个好主意)</li>
+</ul>
+</li>
+<li>对于每个n对m的关系类型B<ul>
+<li>复制两个实体的主键至一个新表作为其外键，这个表也包含B的一些简单属性</li>
+</ul>
+</li>
+<li>对于多值属性<ul>
+<li>为每个多值属性A创建一个表并使其作为实体E的一个属性</li>
+<li>其主键由E的主键和该属性A共同构成，其所有属性均为键</li>
+</ul>
+</li>
+<li>对于每个n-ary关系创建一个新关系(我有点没搞懂n-ary这个关系)<ul>
+<li>其步骤与5相同</li>
+</ul>
+</li>
+</ol>
+<h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><ul>
+<li>关系查询：选择(select), 映射(Project), 并(Union), 交(Intersection), 差(Difference), 积(Cartesian Product), 加(Join), 除(Divide)<ol>
+<li>选择(select): <ul>
+<li>𝜎𝐵 (𝑟) &#x3D; {𝑡 ∈ 𝑟:𝐵(𝑡)}， B作为选择条件，由选择句靠AND，OR，NOT组合而成</li>
+<li>选择句的句式为：&lt;属性名(attribute name)&gt; <op> &lt;常量(constant)&gt; 或者 <attribute name> <op> <attribute name>（第二个句式其实更接近join）<br>  其中<op>为 &#x3D;, &lt;, ≤, &gt;, ≥ 或者 ≠.</li>
+<li>例：𝜎(suprrvisor &#x3D; 1)(ENROLMENT)，即选择supervisor为1的入学记录<br>  𝜎(suprrvisor &#x3D; 1)AND NOT(Name ≠ “Ph.D”)(ENROLMENT)，即选择supervisor为1但不是PhD的入学记录</li>
+<li>运算性：<ol>
+<li>交换性：σ <cond1> (σ <cond2> (R)) &#x3D; σ <cond2> (σ <cond1> (R))</li>
+<li>结合性：σ <cond1> (σ <cond2> (R)) &#x3D; σ <cond1> AND <cond2> (R))</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>映射(project)：<ul>
+<li>𝜋𝑋 (𝑟) &#x3D; {𝑡[𝑋] :𝑡 ∈ r}，一个元组，t是一个从属性到其域的元素的映射，t[X]是该映射对属性集X的限制。如𝜋 Department,Name(ENROLMENT) &#x3D; 即为department与name间的映射</li>
+<li>列出限定属性间的所有映射关系</li>
+<li>如果一个列表2包含另一个列表1，那么1在2的映射为1本身</li>
+<li>映射查询可以和选择查询同时使用，如：πX (σB(R)) &#x3D; σB (πX(R))</li>
+</ul>
+</li>
+<li>积(Cartesian Product)：<ul>
+<li>𝑟 × 𝑠 &#x3D; {𝑡1 || 𝑡2: 𝑡1 ∈ 𝑟 and 𝑡2 ∈ 𝑠}，或者说A×B&#x3D;{(a,b)| a∈A and b∈B}可能更易理解</li>
+<li>如果连接查询中的两个表没有连接条件，则数据库返回其笛卡尔乘积。 数据库将一个表的每一行与另一行合并。笛卡尔乘积总是生成许多行，并且很少有用。</li>
+</ul>
+</li>
+<li>加(Join)：<ul>
+<li>theta连接(Theta-join) ：<ul>
+<li>𝑟 ⋈ 𝐵 𝑠 &#x3D; {𝑡1 || 𝑡2: 𝑡1 ∈ 𝑟 and 𝑡2 ∈ 𝑠 and 𝐵}</li>
+<li>θ连接允许任意比较关系（例如≥）</li>
+</ul>
+</li>
+<li>等值连接(Equi-join)：<ul>
+<li>等值连接是使用相等运算符的theta连接</li>
+</ul>
+</li>
+<li>自然连接(Natural join)<ul>
+<li>自然连接是在每个关系中具有相同名称的属性上的等值连接</li>
+<li>自然连接会删除相等比较中涉及的重复列，因此每个比较列中只有1个保留</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>除(Divide)：<ul>
+<li>假设R是在Z上的关系，S在X上的关系，X⊆Z，设Y＝Z-X，则R÷S是在Y上的关系 。</li>
+<li>R÷S &#x3D; {t : t × S ⊆ R }</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<hr>
+<h1 id="Lesson4-SQL"><a href="#Lesson4-SQL" class="headerlink" title="Lesson4 SQL"></a>Lesson4 SQL</h1><h2 id="查询句式-Query-syntax-："><a href="#查询句式-Query-syntax-：" class="headerlink" title="查询句式(Query syntax)："></a>查询句式(Query syntax)：</h2><pre><code>SELECT attributes FROM relations WHERE condition
+* 例：
+    SELECT Name FROM Beers WHERE Manf = ‘Toohey’’s’;
+    输出
+    Name -------------------- New Old Red Sheaf Stout
+</code></pre>
+<ul>
+<li>一些常用关键字<br>  *ALTER AND CREATE<ul>
+<li>FROM INSERT NOT OR</li>
+<li>SELECT TABLE WHERE</li>
+</ul>
+</li>
+<li>SQL支持数据类型<ul>
+<li>strings, numbers, dates, bit-strings</li>
+<li>比较运算符(&lt; &gt; &lt;&#x3D; &gt;&#x3D; &#x3D; !&#x3D;)被定义在所有类型上，在WHERE表达式中可以使用布尔运算符AND, OR, NOT来组合比较的结果。</li>
+<li>两种字符串char(使用n个字节，左对齐，空白填充)和varchar(使用0…n个字节，无填充)<ul>
+<li>字符串的书写使用单引号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>两种组合方法：<ul>
+<li>% 匹配任何东西（如*）</li>
+<li>_ 匹配任何单个字符（如.）</li>
+<li>例：<ul>
+<li>Name LIKE ‘Ja%’：名字开头是 ‘Ja’ </li>
+<li>Name LIKE ‘_i%’：名字中 ‘i’ 是第二个字符 </li>
+<li>Name LIKE ‘%o%o%’ 名字中有两个‘o’</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字符串操作<ul>
+<li>string || string …连接两个字符串</li>
+<li>‘Post’|’greSQL’ -&gt; PostgreSQL。</li>
+<li>LENGTH(str) … 返回字符串的长度。</li>
+<li>SUBSTR(str,start,length) …从字符串中提取字符。</li>
+<li>substring(‘Thomas’ from 2 for 3) -&gt; hom</li>
+</ul>
+</li>
+<li>日期格式通常是DD-Mon-YYYY，例如’18-Aug-1998’<ul>
+<li>日期比较使用before (&lt;) 和 after (&gt;)</li>
+<li>日期重叠判断<ul>
+<li><p>句式：</p>
+<pre><code>  (start1, end1) OVERLAPS (start2, end2)
+</code></pre>
+</li>
+<li><p>含义：当两个时间段（由它们的端点定义）重叠时，这个表达式为真，不重叠时为假。</p>
+</li>
+<li><p>例子：SELECT (DATE ‘2001-02-16’, DATE ‘2001-12-21’) OVERLAPS (DATE ‘2001-10-30’, DATE ‘2002-10-30’); -&gt; 结果: true</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h1 id="Lesson-5"><a href="#Lesson-5" class="headerlink" title="Lesson 5"></a>Lesson 5</h1><ol>
+<li>数字都有类型<ul>
+<li>Smallint, int, bigint … 2字节, 4字节和8字节的整数 实数, 双精度… … 4字节和8字节浮点数字(精度，比例)</li>
+<li>数字的比例是指小数部分中，小数点右边的小数位数。</li>
+<li>数字的精度是指整数中重要数字的总计数</li>
+</ul>
+</li>
+<li>算术运算：<ul>
+<li>+, -, *, &#x2F;</li>
+<li>有些操作适用于关系中的一列数字。<ul>
+<li>AVG(attr) …attr值的平均值</li>
+<li>COUNT(attr) ……attr列中的行数。</li>
+<li>MIN&#x2F;MAX(attr) ……attr值的最小&#x2F;最大。</li>
+<li>SUM(attr) ……attr值的总和</li>
+<li>NULL在列操作中可以忽略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>元组和集合：<ul>
+<li>元组和集合通常表示为：<ul>
+<li><p>(val1, val2, val3, …)</p>
+</li>
+<li><p>例：</p>
+<pre><code>  Student(stude#, name, course) 
+  ( 2177364, ’Jack Smith’, ’BSc’)——元组
+
+  SELECT name 
+  FROM Employees 
+  WHERE job IN (’Lecturer’, ’Tutor’, ’Professor’); ——集合
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单独关系查询：<ul>
+<li><p>从 FROM关系R开始</p>
+</li>
+<li><p>在WHERE句中用condition来应用σ</p>
+</li>
+<li><p>在SELECT句中用attributes来应用π</p>
+</li>
+<li><p>例：</p>
+<pre><code>  SELECT Attributes
+  FROM R
+  WHERE Conditions
+</code></pre>
+</li>
+</ul>
+</li>
+<li>投影(projection)：<ul>
+<li><p>假设一个关系R和属性X⊆R</p>
+</li>
+<li><p>例：</p>
+<blockquote>
+<p>Names of drinkers: πName(Drinkers)</p>
+</blockquote>
+<pre><code>  语句：
+  SELECT Name FROM Drinkers;
+</code></pre>
+</li>
+<li><p>符号*表示所有属性的列表</p>
+</li>
+<li><p>例：展示drinkers的所有信息</p>
+<pre><code>  SELECT * FROM Drinkers
+</code></pre>
+</li>
+</ul>
+</li>
+<li>选择(selection)：<ul>
+<li><p>SELECT * FROM Rel WHERE Cond</p>
+</li>
+<li><p>例：找出Regent Hotel对New的price</p>
+<pre><code>  SELECT price
+  FROM Sells
+  WHERE bar = ’Regent Hotel’ AND beer = ’New’;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>重命名(renaming)：<ul>
+<li><p>使用重命名操作符ρ，以避免名称冲突。</p>
+</li>
+<li><p>例：</p>
+<blockquote>
+<p>ρBeers(Brand,Brewer) (Beers)</p>
+</blockquote>
+<p>  给出一个新的关系，数据与Beers相同，但属性名发生了变化<br>  SQL提供了AS语句去实现</p>
+<pre><code>  语句：
+  Beers(name, manf) 
+  SELECT name AS Brand, manf AS Brewer FROM Beers;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>AS操作符<ul>
+<li><p>除了在重命名中使用外，AS也用于介绍计算值</p>
+</li>
+<li><p>例：</p>
+<pre><code>  Sells(bar, beer, price) 
+  SELECT bar, beer, price*120 AS PriceInYen 
+  FROM Sells;
+  （注意此处只显示但不改变数据库 ）
+</code></pre>
+</li>
+<li><p>在结果中插入文本：</p>
+</li>
+<li><p>例：</p>
+<pre><code>  SELECT drinker, ‘likes Cooper’’s’ AS WhoLikes 
+  FROM Likes 
+  WHERE beer = ‘Sparkling Ale’;
+  这将输出：
+  DRINKER WHOLIKES 
+  --------------- -------------- 
+  Gernot 	likes Cooper’s 
+  Justin 	likes Cooper’s
+</code></pre>
+</li>
+</ul>
+</li>
+<li>多重关系查询(Querying Multi-relations)<ul>
+<li><p>例：找到约翰喜欢的啤酒商</p>
+<pre><code>  Likes(drinker, beer)
+  Beers(name, manf)
+  语句：
+  SELECT Manf
+  FROM Likes, Beers
+  WHERE drinker = ‘John’ AND beer = name;
+  输出结果
+  MANF
+  --------------------
+  Caledonian
+  Sierra Nevada
+  Sierra Nevada
+  Lord Nelson
+  （可以通过使用DISTINCT消除重复的内容 ）
+</code></pre>
+</li>
+</ul>
+</li>
+<li>属性名冲突(Attribute Name Clashes)：<ul>
+<li><p>属性可能会出现同名造成混淆，以下语句来判断<br>  “哪些酒吧名字和酒名相同”</p>
+<pre><code>  SELECT Bars.name 
+  FROM Bars, Beers 
+  WHERE Bars.name = Beers.name;
+  （AS操作符不能用于解决属性名冲突 ）
+</code></pre>
+</li>
+</ul>
+</li>
+<li>表名冲突(Table Name Clashes)：没看懂</li>
+<li>子查询(Subqueries)：<ul>
+<li><p>SELECT-FROM-WHERE查询的结果可以用在另一个查询的WHERE子句中。</p>
+</li>
+<li><p>最简单的情况：子查询返回一个元组。<br>（可以将结果作为一个常量值，并使用&#x3D;）</p>
+</li>
+<li><p>例：找出与Coogee Bay酒店对VB的收费相同的NEW价格的酒吧</p>
+<pre><code>  SELECT bar 
+  FROM Sells 
+  WHERE beer = ‘New’ 
+      AND price = 
+          (SELECT price 
+          FROM Sells 
+          WHERE bar = ‘Coogee Bay Hotel’ 
+          AND beer = ‘Victoria Bitter’ ); 
+  输出结果：
+  BAR 
+  -------------------- 
+  Royal Hotel
+  （子查询周围需要加括号）
+</code></pre>
+</li>
+<li><p>同一查询也可以不使用子查询：</p>
+</li>
+<li><p>例：找出与Coogee Bay酒店对VB的收费相同的NEW价格的酒吧</p>
+<pre><code>  SELECT b2.bar 
+  FROM Sells b1, Sells b2 
+  WHERE b1.beer = ‘Victoria Bitter’ and b1.bar = ‘Coogee Bay Hotel’ and b1.price = b2.price and b2.beer = ‘New’;
+  输出	结果：
+  BAR 
+  -------------------- 
+  Royal Hotel
+</code></pre>
+</li>
+<li><p>复杂情况：子查询返回多个元组&#x2F;关系时，将其视为一个值的列表，并使用关于列表&#x2F;集合的各种运算符</p>
+</li>
+<li><p>IN操作符</p>
+<ul>
+<li><p>例：找出John喜欢的酒吧和制造商的名字</p>
+<pre><code>  SELECT * 
+  FROM Beers 
+  WHERE name IN 
+      (SELECT beer 
+      FROM Likes 
+      WHERE drinker = ’John’ );
+  输出结果：
+  NAME 			MANF 
+  ------------------------- 	--------------- 
+  80/- 				Caledonian 
+  Bigfoot Barley Wine 	Sierra Nevada 
+  Pale Ale 			Sierra Nevada 
+  Three Sheets 		Lord Nelson
+  （该子查询回答了 &quot;约翰喜欢的啤酒名称是什么？”，同时，不使用in也同样可以回答这个查询。子查询的语句可能会效率较低。）
+</code></pre>
+</li>
+<li><p>不使用子查询的语句：</p>
+<pre><code>  SELECT Beers.* 
+  FROM Beers, Likes 
+  Where Beers.name = Likes.beer and Likes.drinker = ‘John’;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EXISTS功能：<ul>
+<li>如果关系是非空的，则EXISTS为真<ul>
+<li><p>例： 查找由制造商生产的唯一的啤酒</p>
+<pre><code>  SELECT name 
+  FROM Beers b1 
+  WHERE NOT EXISTS 
+      (SELECT * 
+      FROM Beers 
+      WHERE manf = b1.manf 
+      AND name != b1.name ); 
+  输出结果：
+  NAME 
+  -------------------- 
+  80/- 
+  Burragorang Bock 
+  Premium Lager
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Quantifiers<ul>
+<li><p>ANY 和 ALL 分别作为存在性和普遍性的量词</p>
+</li>
+<li><p>例：找出售价最高的啤酒</p>
+<pre><code>  SELECT beer 
+  FROM Sells 
+  WHERE price &gt;= ALL
+      ( SELECT price 
+      FROM sells ); 
+  输出结果：
+  BEER 
+  -------------------- 
+  Three Sheets 
+  Old Admiral
+  （注意不同点，在常用语中，&quot;任何 &quot;和 &quot;所有 &quot;往往是同义词。）
+</code></pre>
+</li>
+</ul>
+</li>
+<li>并，交，补(Union, Intersection, Difference)：<ul>
+<li><p>例：找出饮酒者和啤酒，使饮酒者喜欢啤酒并经常去卖啤酒的酒吧</p>
+<pre><code>  (SELECT * 
+  FROM Likes 
+  ) 
+  INTERSECT 
+  (SELECT drinker,beer 
+  FROM Sells, Frequents 
+  WHERE Frequents.bar = Sells.bar ); 
+  DRINKER 		BEER 
+  --------------- 	-------------------- 
+  Adam 		New 
+  John 			Three Sheets 
+  Justin 		Victoria Bitter
+</code></pre>
+</li>
+</ul>
+</li>
+<li>除(Divide)：<ul>
+<li><p>找出每个Bar都有卖Justin喜欢的所有beer</p>
+<pre><code>  select distinct a.bar 
+  from sells a 
+  where not exists 
+      ( (select b.beer from likes b 
+      where b.drinker = ’Justin’) 
+      except 
+      (select c.beer from sells c 
+      where c.bar = a.bar ) ); 
+  BAR 
+  ------------------------------ 
+  Coogee Bay Hotel
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<hr>
+<h1 id="lesson6"><a href="#lesson6" class="headerlink" title="lesson6"></a>lesson6</h1><h3 id="接上节课的SQL"><a href="#接上节课的SQL" class="headerlink" title="接上节课的SQL"></a>接上节课的SQL</h3><ol>
+<li>聚合操作(Aggregation)：<ul>
+<li><p>平均数AVG</p>
+<pre><code>  例：New的平均价格是多少
+  SELECT AVG(price) 
+  FROM Sells 
+  WHERE beer = ’New’; 
+  输出结果：
+  AVG(PRICE) 
+  ---------- 
+  2.3875
+  （所有 “NEW&quot;的价格都将包含在其中，即使两家酒店以同样的价格销售。）
+</code></pre>
+</li>
+<li><p>如果想要集合语义，可以使用DISTINCT进行强制操作</p>
+<p>  例：多少不同bar卖beer</p>
+<pre><code>  SELECT COUNT(DISTINCT bar) 
+  FROM Sells; 
+  输出结果：
+  COUNT(DISTINCTBAR) 
+  ------------------ 
+  6
+  （如果没有DISTINCT，结果是15—Sells表的条目数）
+</code></pre>
+</li>
+<li><p>以下运算符适用于同列的数值列表：</p>
+<pre><code>  SUM AVG MIN MAX COUNT
+  COUNT(*)这个符号能给出一个关系中的元组数量
+  例：这里有多少不同的beer
+  SELECT COUNT(*) FROM Beers; 
+  输出结果：
+  COUNT(*) 
+  ---------- 
+  18
+</code></pre>
+</li>
+</ul>
+<p>	</p>
+</li>
+<li>分组(Grouping)：<ul>
+<li><p>SELECT-ROM-WHERE后面可以跟着GROUP BY，根据指定属性的值将结果关系分成若干组</p>
+</li>
+<li><p>在计算汇总时分别对待每个组别</p>
+</li>
+<li><p>例：每个brewer做多少beer</p>
+<pre><code>  SELECT manf, 
+  COUNT(beer) 
+  FROM Beers 
+  GROUP BY manf；
+  输出结果：
+  MANF 		COUNT(beer) 
+  -------------------- 	----------- 
+  Caledonian 	1 
+  Carlton 		5 
+  Cascade 		1 
+  Cooper’s 		2 
+  George IV Inn 	1 
+  Lord Nelson 	2 
+  Sierra Nevada 	2 
+  Toohey’s 		4
+</code></pre>
+</li>
+<li><p>分组通常使用‘for each’语句</p>
+</li>
+<li><p>例：对于每个drinker，找出bar里New的平均价格。</p>
+<pre><code>  SELECT drinker, AVG(price) 
+  FROM Frequents, Sells 
+  WHERE beer = ’New’ AND Frequents.bar = Sells.bar 
+  GROUP BY drinker; 
+  输出结果：
+  DRINKER 		AVG(PRICE) 
+  ------------------ 	---------------- 
+  Adam 		2.25
+  John 			2.25 
+  Justin 		2.5
+</code></pre>
+<ul>
+<li>注意事项：使用grouping时，SELECT列表中的每个属性必须有一个聚合操作应用于它或出现在group by子句里，不然将报错</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>消除组操作(Eliminating Groups)：<ul>
+<li>在更复杂的分组条件中，使用HAVING来对group by进行限定<ul>
+<li><p>HAVING语句的工作原理：</p>
+<ol>
+<li>生成与GROUP-BY一样的组。</li>
+<li>剔除不满足HAVING条件的组别。</li>
+<li>对其余组别进行汇总</li>
+</ol>
+</li>
+<li><p>例：找出在一家以上bar供应的beer</p>
+<pre><code>  SELECT beer, AVG(price) 
+  FROM Sells 
+  GROUP BY beer 
+  HAVING COUNT(bar) &gt; 1; 
+  输出结果：
+  BEER 		AVG(PRICE) 
+  -------------------- 	----------------- 
+  New 			2.3875 
+  Old 			2.53333333 
+  Victoria Bitter 	2.4
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>定义一个数据库模式(Database Schema)：<ul>
+<li><p>创建一个关系数据库使用以下语句：</p>
+<pre><code>  CREATE TABLE RelName ( 
+      attribute1 ˜ domain1 ˜ properties 
+      attribute2 ˜ domain2 ˜ properties 
+      attribute3 ˜ domain3 ˜ properties 
+      ... 
+  )
+</code></pre>
+</li>
+<li><p>其中属性(properties)可以包括主键(PK)外键(FK)默认值，属性值的约束等的详细信息。通过DROP TABLE删除表</p>
+</li>
+<li><p>例：</p>
+<pre><code>  CREATE TABLE Beers ( 
+      name VARCHAR(20) PRIMARY KEY, 
+      manf VARCHAR(20), 
+  ); 
+  CREATE TABLE Bars ( 
+      name VARCHAR(30) PRIMARY KEY, 
+      addr VARCHAR(30), 
+      license INTEGER 
+  );
+</code></pre>
+</li>
+</ul>
+</li>
+<li>键的声明(Declaring Keys)：<ul>
+<li>对于主键来说：<ol>
+<li>如果是单一属性，则用属性声明。</li>
+<li>如果有多个属性，在属性列表末尾声明。</li>
+<li>对于每个元组都有不同值的属性，可以通过以下方式进行说明：<br> attribute domain UNIQUE</li>
+</ol>
+</li>
+<li>对于外键来说：<ul>
+<li>对外键的声明可以保证其引用的完整性</li>
+<li>举例：<br>  如果我们要删除Beers中的一个元组，而Sells中也有元组引用它，我们可以<ol>
+<li>拒绝删除</li>
+<li>级联(cascade)删除和删除Sells records</li>
+<li>置空(set-NULL)外键属性</li>
+</ol>
+</li>
+<li>（可以通过REFERENCES后的ON DELETE CASCADE强制级联。）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其他属性<ol>
+<li><p>可以指定一个属性为not NULL，这个属性一般适用于主键</p>
+</li>
+<li><p>可以指定默认值(DEFAULT value)，在插入过程中如果为none则插入默认值<br> 例：</p>
+<pre><code>     CREATE TABLE Likes ( 
+         drinker VARCHAR(20) DEFAULT ’Joe’, 
+         beer VARCHAR(30) DEFAULT ’New’, 
+         PRIMARY KEY(drinker, beer) 
+     );
+</code></pre>
+</li>
+<li><p>其实not NULL是一种特殊情况，SQL有一种更通用的机制来指定约束：</p>
+<blockquote>
+<p>attr_name type CHECK ( condition )</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p>例：</p>
+<pre><code>  CREATE TABLE Example 
+  ( 
+      gender CHAR(1) CHECK (gender IN (’M’,’F’)), 
+      Xvalue INT NOT NULL, 
+      Yvalue INT CHECK (Yvalue &gt; Xvalue), 
+      Zvalue FLOAT CHECK (Zvalue &gt; ( SELECT MAX(price) FROM Sells)) 
+  );
+</code></pre>
+</li>
+</ul>
+</li>
+<li>数据库修改(Database Modification)：<ol>
+<li><p>简单插入(simple insertion)：<br> 例：</p>
+<pre><code> 插入Justin喜欢‘old’
+     INSERT INTO Likes VALUES (’Justin’, ’Old’);
+     只要在INTO子句中指定顺序，就可以在元组常量中重新排序属性：
+     INSERT INTO Sells(price,bar,beer) VALUES 
+         (2.50, ’Coogee Bay Hotel’, ’Pale Ale’);
+</code></pre>
+</li>
+<li><p>从查询结果插入(Insertion from Queries)：</p>
+<p> 例：创建John的潜在drinking buddies的关系(即和John去同一个bar的drinker)</p>
+<pre><code>     CREATE TABLE DrinkingBuddies ( 
+         name varchar(20) 
+     ); 
+     INSERT INTO DrinkingBuddies 
+     ( 
+         SELECT DISTINCT f2.drinker 
+         FROM Frequents f1, Frequents f2 
+         WHERE f1.drinker = ’John’ 
+             AND f2.drinker != ’John’ 
+             AND f1.bar = f2.bar 
+     );
+</code></pre>
+</li>
+</ol>
+</li>
+<li>删减(Deletion)：<ul>
+<li><p>使用DELETE语句：从Relation中删除所有满足Condition的元组</p>
+</li>
+<li><p>例1：Justin不再喜欢Sparkling Ale</p>
+<pre><code>  DELETE FROM Likes 
+  WHERE drinker = ’Justin’ 
+      AND beer = ’Sparkling Ale’;
+</code></pre>
+</li>
+<li><p>例2：删除所有有同一manf的beer</p>
+<pre><code>  DELETE FROM Beers b 
+  WHERE EXISTS 
+      ( SELECT name 
+      FROM Beers 
+      WHERE manf = b.manf 
+      AND name != b.name);
+  （需要注意的点：所有元组都会在被删除前进行辨别，所以无需担心删除前项导致后项不满足条件的情况）
+</code></pre>
+</li>
+</ul>
+</li>
+<li>更新(update)：<ul>
+<li><p>更新允许您修改一个关系的指定元组中的指定属性值</p>
+</li>
+<li><p>例：John搬到Coogee</p>
+<pre><code>  UPDATE Drinkers 
+  SET addr = ’Coogee’ , 
+      phone = ’9665-4321’ 
+  WHERE name = ’John’;
+</code></pre>
+</li>
+<li><p>可以同时更新多个满足条件的数组</p>
+</li>
+<li><p>例：把beer的最高价定为3</p>
+<pre><code>  UPDATE Sells 
+  SET price = 3.00 
+  WHERE price &gt; 3.00;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>更改表格(Changing Tables)：<ul>
+<li>通过ALTER TABLE修改，一些可行的修改：<ol>
+<li>新增加一列(属性)</li>
+<li>改变现有属性(attribute)的属性(properties)</li>
+<li>移除一个属性</li>
+</ol>
+<ul>
+<li><p>例：添加bar的phone number</p>
+<pre><code>  ALTER TABLE Bars 
+  ADD phone char(10) DEFAULT ’Unlisted’;
+  这将在表中新增一个列，并将属性标记为‘unlisted’
+  随后可以通过以下方式添加特定的电话号码
+  UPDATE Bars 
+  SET phone = ’9665-0000’ 
+  WHERE name = ’Coogee Bay Hotel’;
+  （如果没有给出默认值，则新列设置为全为NULL。）
+</code></pre>
+</li>
+</ul>
+</li>
+<li>可以用一个alter对一个关系进行多重修改<ul>
+<li><p>例：为bar添加opening和closing时间</p>
+<pre><code>  ALTER TABLE Bars 
+  Add opens NUMERIC(4,2) DEFAULT 10.00 , 
+  Add closes NUMERIC(4,2) DEFAULT 23.00 , 
+  Add manager VARCHAR(20) 
+  ;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>视图(View)：<ul>
+<li><p>视图是基于 SQL 语句的结果集的可视化的表，包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。我们可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，我们也可以提交数据，就像这些来自于某个单一的表</p>
+</li>
+<li><p>数据库的设计和结构不会受到视图中的函数、where 或 join 语句的影响</p>
+</li>
+<li><p>视图是通过以下方式定义的 </p>
+<pre><code>  CREATE VIEW VIEWName AS 
+      Query
+</code></pre>
+<p>  只有在底层查询有效的情况下，视图才是有效的。</p>
+</li>
+<li><p>视图可以通过以下方式删除。</p>
+<pre><code>  DROP VIEW VIEWName
+</code></pre>
+<p>  删除一个视图对该视图使用的关系没有影响。</p>
+</li>
+<li><p>一个视图可能不会使用基础关系的所有属性。</p>
+</li>
+</ul>
+</li>
+<li>重命名视图属性(Renaming View Attributes)：<ul>
+<li><p>有两种方法实现：</p>
+<pre><code>  1. CREATE VIEW InnerCityPubs AS 
+          SELECT name AS pub, license AS lic 
+          FROM Bars 
+          WHERE addr IN (’The Rocks’, ’Sydney’);
+  2. CREATE VIEW InnerCityPubs(pub,lic) AS 
+          SELECT name, license 
+          FROM Bars 
+          WHERE addr IN (’The Rocks’, ’Sydney’);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>查询视图：<ul>
+<li>与存储关系不同，视图可以在没有显式修改操作的情况下进行 “改变”（即通过改变底层关系）</li>
+<li>我们可以将视图视为 “宏”(”macros”)，它将被重写成对基础关系的查询。</li>
+</ul>
+</li>
+<li>视图更新：<ul>
+<li>没看懂</li>
+</ul>
+</li>
+</ol>
+<h3 id="PLpgSQL"><a href="#PLpgSQL" class="headerlink" title="PLpgSQL"></a>PLpgSQL</h3><ol>
+<li><p>SQL在编程上还是有一些缺点</p>
+<ul>
+<li><p>以问题“如果银行客户试图提取的资金超过其账户中的资金，则显示 “资金不足”，否则更新账户。”为例SQL的解决方法：</p>
+<pre><code>  select &#39; Insufficient Funds &#39; 
+  from Accounts 
+  where acctNo = AcctNum and balance &lt; Amount; 
+
+  update Accounts 
+  set balance = balance - Amount 
+  where acctNo = AcctNum and balance &gt;= Amount; 
+
+  select &#39; New balance : &#39; || balance 
+  from Accounts 
+  where acctNo = AcctNum;
+</code></pre>
+<p>  这里反应出SQL的三个缺点</p>
+<ol>
+<li>SQL不允许参数化（如AcctNum）</li>
+<li>总是尝试UPDATE，即使它知道它是无效的</li>
+<li>始终显示余额，即使在没有改变的情况下<br>  所以为了准确表达 “业务逻辑”，我们需要条件执行和参数传递等设施。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>PostgreSQL允许在SQL中定义函数：</p>
+<ol>
+<li><p>SQL函数定义句式：</p>
+<pre><code> CREATE OR REPLACE FUNCTION 
+     funcName(arg1type, arg2type, ....) 
+     RETURNS rettype 
+ AS $$ 
+     SQL statements 
+ $$ LANGUAGE sql;
+</code></pre>
+</li>
+</ol>
+<ul>
+<li><p>例：指定beer的最高价</p>
+<pre><code>  create or replace function 
+      maxPrice(text) returns float 
+  as $$ 
+      select max(price) from Sells where beer = $1; 
+  $$ language sql; 
+</code></pre>
+</li>
+<li><p>用法的例子：</p>
+<pre><code>  select maxPrice(&#39;New&#39;); 
+  maxprice 
+  ---------- 
+  2.8 
+
+  select bar,price from sells 
+  where beer=&#39;New&#39; and price=maxPrice(&#39;New&#39;); 
+  bar 			price 
+  ---------------- 	------- 
+  Marble Bar 	2.8
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>PLpgSQL的优势（引用自<a target="_blank" rel="noopener" href="https://blog.csdn.net/chuckchen1222/article/details/82221322%EF%BC%89%EF%BC%9A">https://blog.csdn.net/chuckchen1222/article/details/82221322）：</a></p>
+<ul>
+<li>SQL语言虽然有着易于学习的优势，但每个SQL语句都必须由数据库服务器单独执行。这意味着客户端应用程序必须将每个查询发送到数据库服务器，等待它被处理，接收和处理结果，进行一些计算，然后向服务器发送进一步的查询。所有这些都会导致进程间通信，并且如果客户机位于与数据库服务器不同的机器上，也会导致网络开销。</li>
+<li>使用PL&#x2F;pgSQL，您可以对数据库服务器内的计算块和一系列查询进行分组，从而具有过程语言的能力以及易于使用SQL，但是可以显著节省客户端&#x2F;服务器的通信开销。并且<ol>
+<li>客户端和服务器之间的额外往返行程被消除。客户端不需要的中间结果不必在服务器和客户端之间进行封送或传输。</li>
+<li>可以避免多轮查询解析，与不使用存储函数的应用相比，这可以导致相当大的性能提高。</li>
+<li>此外，使用PL&#x2F;PGSQL，可以使用SQL的所有数据类型、运算符和函数</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>PLpgSQL</p>
+<ul>
+<li>PLpgSQL是PostgreSQL的程序语言扩展，其集成了以下功能：<ol>
+<li>实现约束检查(触发函数）</li>
+<li>复杂的查询评估(如递归)</li>
+<li>列值的复杂计算</li>
+<li>详细控制显示的结果</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>PLpgSQL函数</p>
+<ul>
+<li><p>句式</p>
+<pre><code>  CREATE OR REPLACE 
+      funcName(param1, param2, ....) 
+      RETURNS rettype 
+  AS $$ 
+  DECLARE 
+      variable declarations 
+  BEGIN 
+      code for function 
+  END; 
+  $$ LANGUAGE plpgsql;
+</code></pre>
+</li>
+<li><p>PLpgSQL函数参数</p>
+</li>
+<li><p>例：old-style 函数</p>
+<pre><code>  CREATE OR REPLACE FUNCTION 
+      cat(text, text) RETURNS text 
+  AS ‘ 
+  DECLARE 
+      x alias for $1; -- alias for parameter 
+      y alias for $2; -- alias for parameter 
+      result text; -- local variable 
+  BEGIN 
+      result := x||&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;||y; 
+      return result; 
+  END; 
+  ‘ LANGUAGE ‘plpgsql’;
+  （千万不要让别名与属性同名）
+</code></pre>
+</li>
+<li><p>例：new-style函数</p>
+<pre><code>  CREATE OR REPLACE FUNCTION 
+      add(x text, y text) RETURNS text 
+  AS $$ 
+  DECLARE 
+      result text; -- local variable 
+  BEGIN 
+      result := x||&#39;&#39;&#39;&#39;||y; 
+      return result; 
+  END; 
+  $$ LANGUAGE &#39;plpgsql&#39;;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-id="cll3dmmgm00082h5hhil5d9py" data-title="数据库原理学习记录" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          编程原理学习记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">离散数学学习记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">编程原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据库原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">离散数学学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/">Basic Linux Commands 及 9311数据库lab的环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">关键字private的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

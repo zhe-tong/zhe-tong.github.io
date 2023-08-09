@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>编程原理学习记录 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="lesson1 课程介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程原理学习记录">
+<meta property="og:url" content="http://example.com/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="lesson1 课程介绍">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-17T05:34:34.000Z">
+<meta property="article:modified_time" content="2021-03-04T16:39:50.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-编程原理学习记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2021-02-17T05:34:34.000Z" itemprop="datePublished">2021-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      编程原理学习记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="lesson1-课程介绍"><a href="#lesson1-课程介绍" class="headerlink" title="lesson1 课程介绍"></a>lesson1 课程介绍</h1><span id="more"></span> 
+<h2 id="第一节课主要介绍了jupyter的操作方法和一些简单的python方法"><a href="#第一节课主要介绍了jupyter的操作方法和一些简单的python方法" class="headerlink" title="第一节课主要介绍了jupyter的操作方法和一些简单的python方法"></a>第一节课主要介绍了jupyter的操作方法和一些简单的python方法</h2><ul>
+<li>由于教授东一脚西一脚的讲课方法，所以笔记会很杂乱，希望怀着学习目的来阅读这份博客的朋友见谅</li>
+</ul>
+<ol>
+<li><p>sep&#x3D;() 默认是空格，表示两个字符串之间用什么分割。 </p>
+<pre><code> 例 t1 = &#39;hi guys!&#39;
+    t2 = &#39;i am hero!&#39;
+    t3 = &#39;i am flashman!&#39;
+    print(t1, t2, t3, sep=&#39;,&#39;)
+ 结果为 hi guys!,i am hero!,i am flashman!
+</code></pre>
+</li>
+<li><p>istitle() 检测字符串中所有的单词拼写首字母是否为大写，且其他字母为小写</p>
+<pre><code> 例 &#39;Is&#39;.istitle()
+ 结果为 Ture
+</code></pre>
+</li>
+<li><p>lower() 转换字符串中所有大写字符为小写</p>
+<pre><code> 例 &#39;Conversion TO loweCASE&#39;.lower()
+ 结果为 &#39;conversion to lowecase&#39;
+</code></pre>
+</li>
+<li><p>dir() 是一个内置函数，用于列出对象的所有属性及方法</p>
+</li>
+<li><p>type() 可以用于判断一个变量的类型</p>
+<pre><code> 例 type(&#39;Conversion TO loweCASE&#39;)
+ 结果为 str
+</code></pre>
+</li>
+<li><p>join() 将序列中的元素以指定的字符连接生成一个新的字符串</p>
+<pre><code> 例 L = [&#39;111&#39;, &#39;222&#39;, &#39;333&#39;]
+    &#39;加上&#39;.join(L)
+ 结果是 &#39;111加上222加上333&#39;
+</code></pre>
+</li>
+</ol>
+<p>consultation上tutor给了两个建议的python学习网站</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.tutorialspoint.com/python/index.htm">https://www.tutorialspoint.com/python/index.htm</a></li>
+<li><a target="_blank" rel="noopener" href="http://automatetheboringstuff.com/">http://automatetheboringstuff.com/</a></li>
+</ol>
+<hr>
+<hr>
+<h1 id="Lesson2-第二节课讲了数据类型和一些相关函数，以及简单涉及了循环"><a href="#Lesson2-第二节课讲了数据类型和一些相关函数，以及简单涉及了循环" class="headerlink" title="Lesson2 第二节课讲了数据类型和一些相关函数，以及简单涉及了循环"></a>Lesson2 第二节课讲了数据类型和一些相关函数，以及简单涉及了循环</h1><ol>
+<li><p>数据类型-字典(dictionary)</p>
+<pre><code> multiplication_table = &#123;(2,3): 6,(4,7): 28, (5,5): 25&#125;
+ # 用key得到对应的字典中的值
+ multiplication_table[(2,3)] # multiplication_table[2,3] 也 ok
+ # 加一个元素在字典中
+ multiplication_table[6,2] = 12
+</code></pre>
+</li>
+<li><p>列表</p>
+<pre><code> L = [2, 4, 1, 7]
+ # 取首元素
+ print(L[0])
+ # 取列表长度
+ print(len(L))
+ # 取最后一个元素
+ print(L[len(L)-1])
+ # 取从右往左数第四个元素
+ print(L[-4])
+ # 把第二个元素的值改为40
+ L[1] = 40
+ # 加一个（100）的元素在列表最后
+ print(L)
+ L.append(100)
+</code></pre>
+</li>
+<li><p>元组</p>
+<pre><code> L1 = [1, 2]
+ L2 = [2, 2]
+ L3 = [3, 4]
+ T = L1, L2, L3
+ print(T)
+ # 元组是只读的，所以无法直接修改，如果想要更改元组内容，可以通过修改元组内元素
+ # 如 L4 = [2, 20], T[1] = L4
+ # 或 T[1] = 20 都是行不通的
+ L2[1] = 20
+</code></pre>
+</li>
+<li><p>列表可以直接运算</p>
+<pre><code> L = [20, 321, 1, 8122]
+ [str(x) for x in L]# 将列表内元素更改为字符串
+ [2 * x + 1 for x in L]
+</code></pre>
+</li>
+<li><p>.split()函数</p>
+<pre><code> s = &#39;My    NAme \t 12 1is Silas&#39;
+ # 通过指定分隔符对字符串进行切片, 默认为以空格为分割进行切片
+ s.split()
+ 结果：
+ [&#39;My&#39;, &#39;NAme&#39;, &#39;12&#39;, &#39;1is&#39;, &#39;Silas&#39;]
+
+ # .split(分隔符，num)如果参数 num 有指定值，则分隔 num+1 个子字符串
+ s.split(&#39; &#39;, 2)
+ 结果：
+ [&#39;My&#39;, &#39;&#39;, &#39;  NAme \t 12 1is Silas&#39;]
+</code></pre>
+</li>
+<li><p>.lower()</p>
+<pre><code> # 大写变小写
+ s.lower()
+ 结果：
+ &#39;my    name \t 12 1is silas&#39;
+</code></pre>
+</li>
+<li><p>.startswith() and .endswith</p>
+<pre><code> s.startswith(&#39;M&#39;)
+ # 检查字符串是否以指定值开头，返回True和False
+ s.endswith(&#39;s&#39;)
+ # 判断字符串是否以指定后缀结尾,如果以指定后缀结尾返回True,否则返回False
+</code></pre>
+</li>
+<li><p>.join()</p>
+<pre><code> T = &#39;one&#39;, &#39;two&#39;, &#39;three&#39;
+ &#39;_*_&#39;.join(T)
+ # 将序列中的元素以指定的字符连接生成一个新的字符串
+ 结果：
+ &#39;one_*_two_*_three&#39;
+</code></pre>
+</li>
+<li><p>一个小循环</p>
+<pre><code> L = [20, 11, 53, 79, 804]
+ for e in L:
+     oneoneone = &#39;1&#39;,&#39;3&#39;,&#39;5&#39;,&#39;7&#39;,&#39;9&#39;
+     for one in oneoneone:
+         if str(e).endswith(one):
+             print(e)
+ # 将大循环体中的e不断代入小循环one中，判断L中每个元素的结尾是否属于oneoneone
+</code></pre>
+</li>
+</ol>
+<hr>
+<hr>
+<h1 id="Lesson3-循环，随机数，捕获异常"><a href="#Lesson3-循环，随机数，捕获异常" class="headerlink" title="Lesson3 循环，随机数，捕获异常"></a>Lesson3 循环，随机数，捕获异常</h1><ol>
+<li><p>Import</p>
+<pre><code> import random
+ # import：导入模块、文件、包
+ # random：random() 方法返回随机生成的一个实数，它在[0,1)范围内
+ # #random()是不能直接访问的，需要导入 random 模块，然后通过 random 静态对象调用该方法
+</code></pre>
+</li>
+<li><p>Randrange</p>
+<pre><code> print(&#39;100到1000间一个随机的2的倍数:&#39;,random.randrange(100,1000,2))
+ # randrange 语法
+ # random.randrange(start, stop, step)区间左闭右合
+
+ [random.randrange(6) for i in range(12)]# i处用什么字符都无所谓
+ # 随机数应用在for loops中
+ # 指取12次随机数
+</code></pre>
+</li>
+<li><p>还是randrange</p>
+<pre><code> # 应该是个导入句式
+ from random import randrange, randint
+ random.randrange(3)
+</code></pre>
+</li>
+<li><p>简单的for循环</p>
+<pre><code> L = [0, 2, 1, 7, 2, 4]
+ for e in L:
+         if e &gt;= 4:
+             continue # 跳过当前循环的剩余语句，然后继续进行下一轮循环
+         #pass 占位语句，不做任何操作
+         #break 跳出整个循环
+         print(e)
+</code></pre>
+</li>
+<li><p>简单的while循环</p>
+<pre><code> L = [0, 2, 1, 7, 2, 4]
+ not_too_large = True
+ i = 0
+ while i &lt; len(L) and not_too_large:
+     e = L[i]
+     if e &gt;= 6:
+         not_too_large = False
+     else:
+         print(e)
+         i += 1
+</code></pre>
+</li>
+<li><p>if和elif的区别</p>
+<pre><code> # elif：如果条件1判断成功的话，条件2就不会继续判断了
+ # if：互相独立
+ L = [0, 2, 1, 7, 2, 4, 0, 12, 5, 20, 14, 6]
+ for e in L:
+     if e &lt; 2:
+         print(e)
+     elif e &lt; 5:
+         print(10 * e)
+     elif e &lt; 10:
+         print(100 * e)
+     else:
+         print(&#39;Hi&#39;)
+</code></pre>
+</li>
+<li><p>Try的用法</p>
+<pre><code> # 捕获异常
+ L = &#123;&#125;
+ try:
+     L[0] # 尝试执行的代码 
+     print(&#39;GOOD&#39;)
+ except (KeyError, IndexError): # 出现异常的处理
+     print(&#39;BAD&#39;)
+</code></pre>
+</li>
+<li><p>while true， try， raise的结合用法</p>
+<pre><code> # 通过捕获错误的交互数据来提示输入错误
+ while True:
+     try:
+         user_input = int(input(&#39;Give a number between 10 and 20 included:&#39;))
+         if 10 &lt;= user_input &lt;=20:
+             print(user_input ** 2)
+             break
+         else:
+             raise ValueError# 表示引发该类型异常
+     except ValueError:
+         print(&#39;That is not a valid input, try again&#39;)
+
+ # 代码简化
+ while True:
+     try:
+         user_input = int(input(&#39;Give a number between 10 and 20 included:&#39;))
+         if not (10 &lt;= user_input &lt;=20):
+             raise ValueError
+         print(user_input ** 2)
+         break
+     except ValueError:
+         print(&#39;That is not a valid input, try again&#39;)
+</code></pre>
+</li>
+<li><p>一个概率计算代码</p>
+<pre><code> # 模拟10000000次抓取，计算字典中三个元素的取出概率
+ from random import choice
+ L = &#39;A&#39;,&#39;B&#39;,&#39;C&#39;
+ counts = &#123;&#39;A&#39;: 0, &#39;B&#39;: 0, &#39;C&#39;: 0&#125;
+ N = 10_000_000
+ for i in range(N):
+     counts[choice(L)] += 1
+ for k in counts:
+     print(k, &#39;has been choisen&#39;, counts[k] / N * 100, 
+           &#39;% of the time&#39;,sep=&#39;&#39;
+          )
+
+     #可以加一些更改让输出语句变得更易阅读，如最后一个打印可改为
+     #print(k, f&#39;has been choisen &#123;counts[k] / N * 100:.2f&#125;%&#39;, 
+               &#39;of the time&#39;,sep=&#39;&#39;# &#39;:.2f&#39;--取小数点后两位
+              )
+</code></pre>
+</li>
+<li><p>上条介绍的完善输出语句中</p>
+<pre><code>x = 10
+y = [1, 2, 3]
+s = &#39;Hi&#39;
+print(f&#39;x is &#123;x&#125;, y is &#123;y&#125;, and s is &#123;s&#125;&#39;)# 在 ‘ 前用f使得&#123;&#125;起作用
+</code></pre>
+</li>
+</ol>
+<hr>
+<hr>
+<h1 id="Lesson4"><a href="#Lesson4" class="headerlink" title="Lesson4"></a>Lesson4</h1><ol>
+<li><p>isinstance()</p>
+<pre><code> # 判断一个对象是否是一个已知的类型，类似 type()
+ isinstance(123, int)
+</code></pre>
+</li>
+<li><p>定义函数</p>
+<ol>
+<li><p>跳过执行pass</p>
+<pre><code> def f():
+         pass
+ print(f())
+</code></pre>
+</li>
+<li><p>返回赋值 return values</p>
+<pre><code> def f():
+     #return 10返回值为10
+         return None# 返回空值，如果什么也不写也默认返回空值 
+ print(f())
+</code></pre>
+</li>
+<li><p>返回值类型</p>
+<pre><code> def f():
+     return 10,’A’#返回值类型为tuple
+ v = f()
+ print(type(v[0]))#元素1数据类型为int
+
+ x, y = f()
+ print(x)#x=10
+ print(y)#y=A
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>*在数据定义上的作用</p>
+<pre><code> def f(*x):
+ # 可以将不定数量的参数传递给一个函数。
+ # *指tuple，**指dict
+ # 不定的意思是：预先并不知道, 函数使用者会传递多少个参数给你, 所以在这个场景下使用这两个关键字
+     print(x)
+
+ #举个好理解的例子：
+ x, y, *rest = 1, 2, 3, 4
+ print(x)#x=1
+ print(y)#y=2
+ print(rest)#rest=[3,4]
+
+ #还有个晦涩难懂但我觉得有必要记录下的例子
+ def f(*x):	
+     return x * 2
+ f(f(0))# 等价于((0,0),) * 2
+ # 输出结果：((0, 0), (0, 0))
+ f(*f(0))# 等价于(0,0) * 2
+ # 输出结果：(0, 0, 0, 0)
+</code></pre>
+</li>
+<li><p>求两因子与其最大公因数的倍数</p>
+<pre><code> from math import gcd#导包
+ def simplify(numerator, denominator):
+     the_gcd = gcd(numerator, denominator)#给the_gcd变量赋值
+     return numerator // the_gcd, denominator // the_gcd#返回结果
+ simplify(234,3456)#结果为：(13, 192)
+
+ #处理字符串得到结果的方法
+ simplify(*convert_str_to_int(&#39;234&#39;,&#39;3456&#39;))
+</code></pre>
+</li>
+<li><p>定义函数在得到的列表元素中插入符号</p>
+<pre><code> def display_fraction(numerator,denominator):
+     print(f&#39;&#123;numerator&#125;/&#123;denominator&#125;&#39;)
+ #可以直接使用函数
+ display_fraction(*simplify(*convert_str_to_int(&#39;234&#39;,&#39;3456’)))#得到结果13/192
+</code></pre>
+</li>
+</ol>
+<hr>
+<hr>
+<h1 id="Lesson5"><a href="#Lesson5" class="headerlink" title="Lesson5"></a>Lesson5</h1><ol>
+<li><p>依旧是元组赋值的</p>
+<p> 例1：<br> def f(a, b, c&#x3D;10):<br>        return (a + b, c * 20)<br> x &#x3D; (1, 3, 5)<br><br> #f(x)报错，因为b没有赋值<br> f(*x)<br><br> 输出结果<br> (4, 100)<br> 例2:	</p>
+<pre><code> def g(y,z):
+     print(f&#39;&#123;y&#125; --- &#123;z&#125;&#39;)
+ 
+ #g(f(*x))报错，同理因为z没有赋值
+ g(*f(*x))
+
+ 输出结果：
+ 4 --- 100
+</code></pre>
+</li>
+<li><p>函数定义范围：</p>
+<ol>
+<li><p>一个解释函数定义范围的例子</p>
+<pre><code> def f():
+     def g():#定义函数g()也可以写在f()函数的外面
+         print(&#39;i am g!&#39;)
+     print(&#39;i am f, waking up!&#39;)
+     g()
+     print(&#39;i am f, going to sleep&#39;)
+ f()
+
+ 输出结果：
+ i am f, waking up!
+ i am g!
+ i am f, going to sleep
+</code></pre>
+</li>
+<li><p>不用在意函数定义的前后顺序</p>
+<pre><code> def f_1():
+     g_1()
+
+ def g_1():
+     print(&#39;HI!&#39;)
+ f_1()
+
+ 输出结果：
+ HI!
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>同时在对方函数定义里定义的函数：</p>
+<pre><code> def f(n):
+     print(&#39;f working with argument of&#39;, n)
+         if n &gt; 0:
+             g(n - 1)
+
+ def g(n):
+         print(&#39;g working with argument of&#39;, n)
+         if n &gt; 0:
+             f(n - 1)
+
+ f(10)
+
+ 输出结果：
+ f working with argument of 10
+ g working with argument of 9
+ f working with argument of 8
+ g working with argument of 7
+ f working with argument of 6
+ g working with argument of 5
+ f working with argument of 4
+ g working with argument of 3
+ f working with argument of 2
+ g working with argument of 1
+ f working with argument of 0
+</code></pre>
+</li>
+<li><p>Unicode字符集</p>
+<ol>
+<li><p>圣诞树的Unicode：U + 1F384，unicode是以十六进制进行编码的</p>
+</li>
+<li><p>三种1F384的16进制转化</p>
+<pre><code> 4 + (8 * 16) + (3 * 16 **2) + (15 * 16 ** 3) + (1 * 16 ** 4) 
+ 0X1F384
+ int(&#39;1F384&#39;,16)#将str转化为int时，可注明该字符串进制并转化为10进制整数
+
+ 三种均输出：
+ 127876
+</code></pre>
+</li>
+<li><p>四种输出圣诞树的方法</p>
+<pre><code> #chr()函数是输入一个整数, 返回其对应的ascii符号
+ chr(127876)
+ chr(0X1F384)
+ &#39;\U0001F384&#39;
+ &#39;\N&#123;Christmas tree&#125;&#39;
+
+ 四种均输出：
+ &#39;&#39;
+</code></pre>
+</li>
+<li><p>ord()<br> #ord()函数就是用来返回单个字符的ascii值<br> ord(‘’)<br><br> 输出结果：<br> 127876</p>
+</li>
+</ol>
+</li>
+<li><p>二进制</p>
+<ol>
+<li><p>bin()返回一个整数 int 或者长整数 long int 的二进制表示</p>
+<pre><code> bin(41)#返回0b101001
+</code></pre>
+</li>
+<li><p>输入0b开头二进制数直接输出对应10进制整数</p>
+<pre><code> 0b101001		
+</code></pre>
+</li>
+<li><p>:b返回对应二进制</p>
+<pre><code> f&#39;&#123;41:b&#125;&#39;#返回101001
+ len(f&#39;&#123;41:b&#125;&#39;)#返回二进制数列长度
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>二进制数列遍历</p>
+<ol>
+<li><p>遍历结果为integer</p>
+<pre><code> for i in range(8):
+     print(f&#39;&#123;i:03b&#125;&#39;)#03限定了输出结果的长度
+
+ 输出结果：
+ 000
+ 001
+ 010
+ 011
+ 100
+ 101
+ 110
+ 111
+</code></pre>
+</li>
+<li><p>遍历结果为tuple</p>
+<pre><code> for i in range(8):
+         print(tuple(int(b) for b in f&#39;&#123;i:03b&#125;&#39;))
+
+ 输出结果：
+ (0, 0, 0)
+ (0, 0, 1)
+ (0, 1, 0)
+ (0, 1, 1)
+ (1, 0, 0)
+ (1, 0, 1)
+  (1, 1, 0)
+ (1, 1, 1)
+</code></pre>
+</li>
+<li><p>根据各位通过整除取余进行遍历输出</p>
+<ol>
+<li><p>整除和取余操作</p>
+<pre><code> #%取余
+ 2315 % 10 #输出5
+ #//整除
+ 2315 // 1000 #输出2
+ #/除法
+ 2315 / 1000 #输出2.315
+</code></pre>
+</li>
+<li><p>以7991至8007间整数示例</p>
+<pre><code> for i in range(7991, 8007):
+         print(i // 1000, i // 100 % 10, i // 10 % 10, i % 10)
+
+ 输出结果：
+ 7 9 9 1
+ 7 9 9 2
+ 7 9 9 3
+ 7 9 9 4
+ 7 9 9 5
+ 7 9 9 6
+ 7 9	9 7
+ 7 9 9 8
+ 7 9 9 9
+ 8 0 0 0
+ 8 0 0 1
+ 8 0 0 2
+ 8 0 0 3
+ 8 0 0 4
+ 8 0 0 5
+ 8 0 0 6
+</code></pre>
+</li>
+<li><p>二进制</p>
+<pre><code> for i in range(8):
+         print(tuple((i // 4, i // 2 % 2, i % 2)))
+
+ 输出结果：
+ (0, 0, 0)
+ (0, 0, 1)
+ (0, 1, 0)
+ (0, 1, 1)
+ (1, 0, 0)
+ (1, 0, 1)
+ (1, 1, 0)
+ (1, 1, 1)
+</code></pre>
+</li>
+<li><p>最后完成一个我看不懂的dict遍历输出</p>
+<pre><code> rule_number = 41
+ bits_of_rule = [int(b) for b in f&#39;&#123;rule_number:08b&#125;&#39;]
+ bits_of_rule
+
+ #把dict带进循环
+ D = &#123;(i // 4, i // 2 % 2, i % 2): bits_of_rule[-i - 1] for i in range(8)&#125;
+ D
+
+ 输出结果：
+ &#123;(0, 0, 0): 1,
+ (0, 0, 1): 0,
+ (0, 1, 0): 0,
+ (0, 1, 1): 1,
+ (1, 0, 0): 0,
+ (1, 0, 1): 1,
+ (1, 1, 0): 0,
+ (1, 1, 1): 0&#125;
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>sorted()</p>
+<ol>
+<li><p>sorted()函数：从可迭代的项中返回一个新的排序列表,简而言之就是排序</p>
+<pre><code> sorted(&#123;0,3,19,3452,81&#125;)
+
+ 输出结果：
+ [0, 3, 19, 81, 3452]
+</code></pre>
+</li>
+<li><p>加一个dict的小例子</p>
+<pre><code> D = &#123;1: 10, 0: 20, 3: 30&#125;
+ sorted(D)
+
+ 输出结果：
+ [0, 1, 3]
+ #key的排序
+</code></pre>
+</li>
+<li><p>使用key来限定排序规则</p>
+<pre><code> sorted(&#123;&#39;Integer&#39;, &#39;literals&#39;, &#39;in&#39;, &#39;Different&#39;, &#39;bases&#39;&#125;)
+
+ 输出结果：
+ [&#39;Different&#39;, &#39;Integer&#39;, &#39;bases&#39;, &#39;in&#39;, &#39;literals&#39;]
+ #这里可以看到大写字母都排在前面
+ #如果列表中的元素是字符串，那么key = str.lower可以使比较都按小写字母的ASCII码进行比较
+
+ sorted(&#123;&#39;Integer&#39;, &#39;literals&#39;, &#39;in&#39;, &#39;Different&#39;, &#39;bases&#39;&#125;,
+           key = str.lower #.lower()函数效果一样
+           )
+
+ 输出结果：
+ [&#39;bases&#39;, &#39;Different&#39;, &#39;in&#39;, &#39;Integer&#39;, &#39;literals&#39;]
+</code></pre>
+</li>
+<li><p>如果希望既按字符串长度进行排序，又按ASCII码排序，可以定义一个函数</p>
+<pre><code> def combine_orders(s):
+         return len(s), s
+ sorted(&#123;&#39;Integer&#39;, &#39;literals&#39;, &#39;in&#39;, &#39;Different&#39;, &#39;bases&#39;&#125;,
+               key = combine_orders
+               )
+
+ 输出结果：
+ &#39;in&#39;, &#39;bases&#39;, &#39;Integer&#39;, &#39;literals&#39;, &#39;Different&#39;]
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>lambda函数</p>
+<ol>
+<li><p>lambda,匿名函数 1.减少代码冗余 2.不用命名函数</p>
+<pre><code> E = lambda: 2
+ E()
+ 或
+ (lambda:2)()#代码简洁且无需命名
+</code></pre>
+</li>
+<li><p>例子：</p>
+<pre><code> (lambda x, y: x + y)(2, 3)
+
+ 输出结果：
+ 5
+</code></pre>
+</li>
+<li><p>所以刚刚的排序7.4就可以用lambda函数来解决</p>
+<pre><code> sorted(&#123;&#39;Integer&#39;, &#39;literals&#39;, &#39;in&#39;, &#39;Different&#39;, &#39;bases&#39;&#125;,
+           key = lambda s:(len(s), s.lower())
+           )
+
+ 输出结果：
+ [&#39;in&#39;, &#39;bases&#39;, &#39;Integer&#39;, &#39;literals&#39;, &#39;Different&#39;]
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-id="cll3dmmgq000d2h5h3us92fg4" data-title="编程原理学习记录" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据库原理学习记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">编程原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据库原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">离散数学学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/">Basic Linux Commands 及 9311数据库lab的环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">关键字private的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

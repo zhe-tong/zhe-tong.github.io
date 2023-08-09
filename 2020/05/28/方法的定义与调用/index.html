@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>方法的定义与调用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="方法的定义与调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="方法的定义与调用">
+<meta property="og:url" content="http://example.com/2020/05/28/%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B0%83%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="方法的定义与调用">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-27T14:18:54.000Z">
+<meta property="article:modified_time" content="2020-05-27T16:34:16.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-方法的定义与调用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/05/28/%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B0%83%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2020-05-27T14:18:54.000Z" itemprop="datePublished">2020-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      方法的定义与调用
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="方法的定义与调用"><a href="#方法的定义与调用" class="headerlink" title="方法的定义与调用"></a>方法的定义与调用</h1><span id="more"></span>
+
+<h2 id="定义方法的完整格式："><a href="#定义方法的完整格式：" class="headerlink" title="定义方法的完整格式："></a>定义方法的完整格式：</h2><pre><code>修饰符 返回值类型 方法名称(参数类型 参数名称,...)&#123;
+    方法体
+    return 返回值;
+&#125;
+</code></pre>
+<p> 方法其实就是若干语句的功能集合。举个例子，方法好比工厂。</p>
+<pre><code>蒙牛工厂   原料：奶牛、饲料、水
+         产出物：奶制品
+
+* 参数（原料）：进入方法的数据
+* 返回值（产出物）：从方法出来的数据
+</code></pre>
+<ul>
+<li>修饰符：目前对于新手的我来讲，public static可以满足我大部分编程需求。</li>
+<li>返回值类型：方法产生的数据结果是什么类型。</li>
+<li>方法名称：命名规则为小驼峰式。</li>
+<li>参数类型：进入方法的数据是什么类型。</li>
+<li>参数名称：进入方法的数据对应变量的名称。<ul>
+<li>ps：参数如果有多个，使用逗号“,”进行分割。</li>
+</ul>
+</li>
+<li>方法体：方法需要做的事，若干行代码。</li>
+<li>return：两个作用，第一停止代码，第二将后面的返回值还给调用处。</li>
+<li>返回值：也就是方法执行后最终产生的数据结果。</li>
+</ul>
+<h2 id="调用格式："><a href="#调用格式：" class="headerlink" title="调用格式："></a>调用格式：</h2><pre><code>方法的三种调用格式。
+    1. 单独调用：方法名称(参数);
+    2. 打印调用：System.out.println(方法名称(参数));
+    3. 赋值调用：数据类型 变量名称 = 方法名称(参数);
+</code></pre>
+<h2 id="方法有参数与无参数的区别"><a href="#方法有参数与无参数的区别" class="headerlink" title="方法有参数与无参数的区别"></a>方法有参数与无参数的区别</h2><ul>
+<li>有参数：小括号当中有内容，当一个方法需要一些数据条件才能完成任务的时候就是有参数。<ul>
+<li>例如两个数字相加，必须知道两数字各是多少才能相加。</li>
+</ul>
+</li>
+<li>无参数：小括号留空。一个方法不需要任何数据条件自己就能独立完成任务就是无参数。<ul>
+<li>例如定义一个方法，打印固定十次的Helloworld。</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用方法时的注意事项："><a href="#使用方法时的注意事项：" class="headerlink" title="使用方法时的注意事项："></a>使用方法时的注意事项：</h2><ol>
+<li>方法应该定义在类中，但是不能再方法当中再定义方法，不能嵌套。</li>
+<li>方法定义前后顺序无所谓。</li>
+<li>方法定义之后不会执行，如果希望执行，一定要调用。</li>
+<li>如果方法有返回值，必须写上“return 返回值；”，不能没有</li>
+<li>return后面的返回值数据，必须和方法的返回值类型对应。</li>
+<li>对于一个void没有返回值的方法，格式只能写return不能带有后面的返回值。</li>
+<li>对于方法当中最后一行的return可以省略不写（如果没有返回值）。</li>
+<li>一个方法中可以有多个return语句，但同时只有一个会被执行到，两个return不能连写。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/05/28/%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B0%83%E7%94%A8/" data-id="cll3dmmgp000c2h5h8nmy9n17" data-title="方法的定义与调用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/31/%E6%95%B0%E7%BB%84%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数组的简单使用方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/26/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">循环语句</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">编程原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据库原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">离散数学学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/">Basic Linux Commands 及 9311数据库lab的环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">关键字private的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

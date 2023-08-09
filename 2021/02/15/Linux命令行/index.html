@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Basic Linux Commands 及 9311数据库lab的环境搭建 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="lab中linux操作系统的基础：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Linux Commands 及 9311数据库lab的环境搭建">
+<meta property="og:url" content="http://example.com/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="lab中linux操作系统的基础：">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-15T12:45:03.000Z">
+<meta property="article:modified_time" content="2021-02-23T01:14:04.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Linux命令行" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="article-date">
+  <time class="dt-published" datetime="2021-02-15T12:45:03.000Z" itemprop="datePublished">2021-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Basic Linux Commands 及 9311数据库lab的环境搭建
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="lab中linux操作系统的基础："><a href="#lab中linux操作系统的基础：" class="headerlink" title="lab中linux操作系统的基础："></a>lab中linux操作系统的基础：</h1><span id="more"></span>
+
+<p>以下先记录一些常用的linux commands</p>
+<ol>
+<li>“pwd” 指 “print working directory”, 也就是打印当前路径</li>
+<li><ul>
+<li>“cd ..&#x2F;“ cd指 “change directory”, 切换当前目录至父目录</li>
+<li>“cd .&#x2F;“, 切换至当前目录</li>
+<li>“cd ~” 指 “home directory”</li>
+<li>“cd &#x2F;“ &#x2F;指 “absolute path”, 切换至指定路径</li>
+</ul>
+</li>
+<li><ul>
+<li>“ls” 指 “list directory”, 查看当前目录</li>
+<li>“ls -l” 指 “long listing”, 以长数据串的形式列出当前目录</li>
+<li>“ls -a” 指 “show all the hiden files and current dirctory”, 列出全部文件(包括.开头的隐藏文件)</li>
+<li>“ls -la” 可获得更多detail</li>
+</ul>
+</li>
+<li><ul>
+<li>“cp” 指 “copy”, 复制操作</li>
+<li>“cp -r” 指 “recursive copy”, 递归式复制，用于目录的复制</li>
+</ul>
+</li>
+<li>“rm” 指 “remove”, 删除操作</li>
+<li>“cat” 指 “display the content”, 查看文件内容</li>
+<li>“mv” 指 “move files and directories”, 移动文件</li>
+<li>“ssh” 指 “securely connect to remote server”,远程服务</li>
+</ol>
+<p>作为操作Linux系统的基础，熟练掌握命令行在初学阶段显得尤为重要，可以多做练习。同时随着学习，更多的操作命令也会在之后更新。</p>
+<hr>
+<h1 id="lab的环境搭建"><a href="#lab的环境搭建" class="headerlink" title="lab的环境搭建"></a>lab的环境搭建</h1><ul>
+<li>首先登陆网址<a target="_blank" rel="noopener" href="http://vlabgateway.cse.unsw.edu.au/">http://vlabgateway.cse.unsw.edu.au</a><br>  点击1024*768<br>  输入zID及密码登陆</li>
+<li>右键打开terminal</li>
+</ul>
+<ol>
+<li>创建虚拟机（Creating a Virtual Host）<ol>
+<li><p>输入</p>
+<pre><code> ssh grieg
+</code></pre>
+<p> 登陆grieg</p>
+</li>
+<li><p>输入</p>
+<pre><code> hostname
+</code></pre>
+<p> 检查是否成功登陆进入grieg</p>
+</li>
+<li><p>输入</p>
+<pre><code> priv srvr
+</code></pre>
+<p> 创建一个新的目录来存放你的服务器文件<br> 可以输入</p>
+<pre><code> cd /srvr/zID
+</code></pre>
+<p> 检查该目录是否创建成功</p>
+</li>
+</ol>
+</li>
+<li>设置postgreSQL服务器（Setting up your PostgreSQL Server）<ol>
+<li><p>输入</p>
+<pre><code> cs9311/bin/pginit
+</code></pre>
+<p> 该命令将在&#x2F;srvr&#x2F;zID&#x2F;目录下创建一个名为pgsql的子目录，同时放置一个名为env的文件</p>
+</li>
+<li><p>输入</p>
+<pre><code> source /srvr/YOU/env
+</code></pre>
+<p> 激活env中的环境设置</p>
+</li>
+<li><p>修改文件.bash_profile或者.bashrc或者.profile</p>
+<pre><code> vim .profile
+</code></pre>
+<p> 接着在文件中输入</p>
+<pre><code> if [ `hostname` = &quot;grieg&quot; ]
+ then
+     priv srvr（前面留4个空格）
+     source /srvr/zID/env
+ fi
+</code></pre>
+<p> 这里空格的要求很严格，不能出错。键入结束后:wq保存退出</p>
+</li>
+<li><p>输入</p>
+<pre><code> source /srvr/zID/env
+</code></pre>
+<p> 完成这些步骤后之后的登陆便可以跳过这些重复的命令</p>
+</li>
+</ol>
+</li>
+<li>使用PostgreSQL服务器（Using your PostgreSQL Server）<ol>
+<li><p>输入</p>
+<pre><code> ~cs9311/bin/pgs
+</code></pre>
+<p> 此为控制pgs的命令</p>
+</li>
+<li><p>然后就可以用</p>
+<pre><code> pgs start
+ pgs status
+ pgs stop
+ psql MyDatabase
+ psql -l
+</code></pre>
+<p> 对服务器进行控制</p>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/" data-id="cll3dmmg800002h5hhbl42ay5" data-title="Basic Linux Commands 及 9311数据库lab的环境搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          离散数学学习记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关键字private的使用方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/17/%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">编程原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据库原理学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/16/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">离散数学学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/15/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/">Basic Linux Commands 及 9311数据库lab的环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/07/%E5%85%B3%E9%94%AE%E5%AD%97private%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">关键字private的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
